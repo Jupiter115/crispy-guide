@@ -3,6 +3,7 @@
 ##Stephen
 
 ##Matt
+- users should have the option to see more details
 
 ##Yu
 
