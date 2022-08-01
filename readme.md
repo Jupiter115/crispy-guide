@@ -9,6 +9,7 @@ As a user, I want:
   - Price
   - Link to item
   - Description
+  - Photo
 
 ##Matt
 
