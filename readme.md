@@ -29,5 +29,13 @@ Stephen Wong
 - Particlejs library 
 - Affiliate advertising banners
 
+## REQ RES CYCLE
+![Request Response Diagram](./assets/planning/req-res-cycle-diagram.png)
+
+## WIREFRAME
+![Landing Page](./assets/planning/landing-page.jpg)
+![Product Page](./assets/planning/product-page.jpg)
+![Mobile Page](./assets/planning/mobile-landing-page.jpg)
+![Admin Page](./assets/planning/admin-page.jpg)
 
 
