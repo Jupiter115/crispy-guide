@@ -3,7 +3,7 @@ import React from "react";
 export default function AdminDash() {
   return (
     <div>
-      if(!showDash)
+      {/* if(!showDash)
       {
         <div>
           Admin Enter your password
@@ -12,7 +12,7 @@ export default function AdminDash() {
             <button type="submit">Enter</button>
           </form>
         </div>
-      }
+      } */}
     </div>
   );
 }
