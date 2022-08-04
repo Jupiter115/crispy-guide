@@ -1,8 +1,45 @@
 [
-    
-  {"title": "deal1"},
-  {"title2": "deal2"}
-
+  {
+    "title": "Funko Pop! The Wizarding World of Harry Potter",
+    "orig": 24,
+    "Price": 12,
+    "description": "Pop Mart The Wizarding World of Harry Potter Series - Caja ciega de figuras, 1 unidad, a granel, figuras coleccionables al azar populares, juguetes de moda, regalo lindo y creativo, para Navidad, fiestas de cumpleaños, feriados",
+    "image": "https://m.media-amazon.com/images/I/61ku9UiTwkL._AC_SX569_.jpg",
+    "Likes": 48,
+    "Category": ["Figurines", "Collection", "Funko", "Collectables"],
+    "Hero": true
+  },
+  {
+    "title": "Funko Pop! Spiderman",
+    "orig": 24,
+    "Price": 12,
+    "description": "Funko Pop! Marvel: Spider-Man: No Way Home - Spider-Man en traje integrado",
+    "image": "https://m.media-amazon.com/images/I/61GADPf-E9S._AC_SX569_.jpg",
+    "Likes": 48,
+    "Category": ["Figurines", "Collection", "Funko", "Collectables"],
+    "Hero": false
+  },
+  {
+    "title": "Funko Pop! Spiderman",
+    "orig": 24,
+    "Price": 12,
+    "description": "Funko Pop! Marvel: Spider-Man: No Way Home - Spider-Man en traje integrado",
+    "image": "https://m.media-amazon.com/images/I/61GADPf-E9S._AC_SX569_.jpg",
+    "Likes": 48,
+    "Category": ["Figurines", "Collection", "Funko", "Collectables"],
+    "Hero": false
+  },
+  {
+    "title": "Funko Pop! The Wizarding World of Harry Potter",
+    "orig": 24,
+    "Price": 12,
+    "description": "Pop Mart The Wizarding World of Harry Potter Series - Caja ciega de figuras, 1 unidad, a granel, figuras coleccionables al azar populares, juguetes de moda, regalo lindo y creativo, para Navidad, fiestas de cumpleaños, feriados",
+    "image": "https://m.media-amazon.com/images/I/61ku9UiTwkL._AC_SX569_.jpg",
+    "Likes": 48,
+    "Category": ["Figurines", "Collection", "Funko", "Collectables"],
+    "Hero": true
+  }
+  
 ]
 
 
