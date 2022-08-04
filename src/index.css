@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@100;400;700;800&display=swap');
+
+:root {
+  --clr-primary:#8B8A76;
+  --clr-secondary:#F2ECDD;
+  --clr-text: #251E19;
+  --clr-accent1:#E1EDED;
+  --clr-accent2:#5E4F40;
+  --clr-accent3:#99562C;
+  --font-title: 'Poppins', sans-serif;
+  --font-body: 'Raleway', sans-serif;
+}
+
 * {
   outline: 1px solid red
 }
+
