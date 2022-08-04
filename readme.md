@@ -2,21 +2,27 @@
 
 ## PROJECT DESCRIPTION
 
-Affliate marketing app designed to display and promote a list of product deals to the audience. The audience may view the products, see a brief description, a link to the product, the price, an image of the product, and the name of the product. The admin of the site will have a separate login to edit, post, and delete products.
+Affiliate marketing app designed to display and promote a list of product deals to the audience. The audience may view the products, see a brief description, a link to the product, the price, an image of the product, and the name of the product. The admin of the site will have a separate login to edit, post, and delete products.
 
-## PROJECT MANGER
+## PROJECT MANAGER
 Stephen Wong
+
+## GROUP MEMBERS
+- Matthew Studzinski
+- Mauricio Alvarenga
+- Yu Xiong
+- Stephen Wong
 
 ## MVP
 - Mongo Atlas DB with a document of products.
 - Front page of deals
     - More details (show more details when the description is too long)
-    - Hero or Carosoul (stretch) of top deal
+    - Hero or Carousel (stretch) of the top deals
     - Product
-      - Each products should have category 
+      - Each product should have a category 
       - Each product should have a Price
       - Each product should have a Title
-      - Each product should have a Desription
+      - Each product should have a Description
 - Admin page to post, delete, edit products, and changed Hero 
 
 ## STRETCH GOALS
@@ -28,6 +34,22 @@ Stephen Wong
 - Threejs library
 - Particlejs library 
 - Affiliate advertising banners
+
+## MODELS
+- Product Model
+  - Title (String)
+  - Original Price (Number)
+  - Sale Price (Number)
+  - Description (String)
+  - Image URL (String)
+  - Likes (Number)
+  - Category (Array)
+  - Hero (Boolean)
+
+- User Model
+    - Username (String)
+    - Password (String)
+    
 
 ## REQ RES CYCLE
 ![Request Response Diagram](./assets/planning/req-res-cycle-diagram.png)
