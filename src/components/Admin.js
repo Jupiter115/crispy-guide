@@ -1,13 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import AdminDash from "./AdminDash";
 
 export default function Admin() {
-  return (
-    <div>
-      Admin Enter your password
-      <form>
-        <input type="text"></input>
-        <button type="submit">Enter</button>
-      </form>
-    </div>
-  );
+  const [input, setInput] = useState("");
+  const [showDash, setShowDash] = useState(false);
+  function handleChange(e) {
+    setInput(e.target.value);
+  }
+  return <div></div>;
 }
