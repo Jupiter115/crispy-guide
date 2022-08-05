@@ -11,9 +11,7 @@
   --font-body: 'Raleway', sans-serif;
 }
 
-/* * {
-  outline: 1px solid blue
-} */
+
 
 /**************************************************************************
 PRODUCT CARD
@@ -22,6 +20,7 @@ PRODUCT CARD
   display:flex;
   flex-wrap:wrap;
   border-radius: 40px;
+
   box-shadow: 4px 4px #3d3838;
   padding: 20px 0;
   margin: 20px;
