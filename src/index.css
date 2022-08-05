@@ -48,10 +48,16 @@ a lot of media queries */
 .product-container .img{
   overflow: hidden;
   width: 100%;
-  height: inherit;
+  min-height: 10vh;
+  height:auto;
   margin:23px;
+
 }
 .price-container{
   width: 50%;
 
+}
+
+.strikethrough {
+  text-decoration: line-through;
 }

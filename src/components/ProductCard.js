@@ -12,10 +12,12 @@ export default function ProductCard(props) {
         <Card.Body className = "price-container">
     
           <Card.Text className = "sale-price">
+            Sale Price! < br />
             $  {props.salePrice}
           </Card.Text>
           <Card.Text className = "orig-price">
-            $  {props.origPrice}
+            Original Price <br />
+            <span class ="strikethrough"> ${props.origPrice}</span>
           </Card.Text>
         </Card.Body>
       </Card>

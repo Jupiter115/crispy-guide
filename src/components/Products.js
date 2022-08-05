@@ -1,7 +1,7 @@
 import React from "react";
 import ProductCard from "./ProductCard";
 import products from "../data/seeds.json";
-import { Link } from "react-router-dom";
+
 
 export default function Products() {
   return (
@@ -16,9 +16,7 @@ export default function Products() {
           origPrice={product["orig-price"]}
         />
       ))}
-      <Link to="/admin">
-        <p>Admin Login</p>
-      </Link>
+     
     </div>
   );
 }
