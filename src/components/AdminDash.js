@@ -24,6 +24,7 @@ export default function AdminDash() {
     // });
     setData(seeds);
 
+    // need to remove timeout in production
     setTimeout(() => {
       setLoading(false);
     }, 5000);
