@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import Admin from "./components/Admin";
 import Test from "./components/Test";
 import AdminDashNewPost from "./components/AdminDashNewPost";
+import AdminDashEditPost from "./components/AdminDashEditPost";
 import AdminDash from "./components/AdminDash";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/dash" element={<AdminDash />} />
         <Route path="/admin/post" element={<AdminDashNewPost />} />
+        <Route path="/admin/edit/:id" element={<AdminDashEditPost />} />
         <Route path="/test" element={<Test />} />
       </Routes>
       <Footer />

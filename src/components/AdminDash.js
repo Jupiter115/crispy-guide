@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import seeds from "../data/seeds.json";
 
 import throbber from "../assets/180-ring-with-bg.svg";
-import { LoginProvider } from "./Admin";
 
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -14,49 +13,42 @@ import Paper from "@mui/material/Paper";
 import EditIcon from "@mui/icons-material/Edit";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import { red } from "@mui/material/colors";
+
 // import EditIcon from "@mui/icons-material/Edit";
 
-// const axios = require("axios");
+const axios = require("axios");
 
 export default function AdminDash() {
   //Context Consumer
-  const login = useContext(LoginProvider);
-  console.log("admin dash " + login);
 
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const fetchData = async (req, res) => {
-    const data = await fetch("https://mysterious-temple-52384.herokuapp.com/");
-
-    setData(data.json());
-  };
-
   useEffect(() => {
-    fetchData();
-    // setData(seeds);
-    // need to remove timeout in production
-    setTimeout(() => {
+    const fetchData = async () => {
+      const res = await fetch("https://mysterious-temple-52384.herokuapp.com/");
+      const data = await res.json();
+      setData(data);
       setLoading(false);
-    }, 1000);
+    };
+    fetchData();
   }, []);
 
   //Table Settings
-  function createData(name, description, orig, price, edit) {
-    return { name, description, orig, price, edit };
+  function createData(name, description, orig, price, edit, id) {
+    return { name, description, orig, price, edit, id };
   }
 
   const rows = [];
-  seeds.forEach((item) => {
+  data.forEach((item) => {
     rows.push(
       createData(
         item.title,
         item.description,
         "$" + item["orig"],
         "$" + item["price"],
-
-        <EditIcon />
+        <Link to={`/admin/edit/${item._id}`}>Edit</Link>,
+        item._id
       )
     );
   });
@@ -86,7 +78,7 @@ export default function AdminDash() {
           <TableBody>
             {rows.map((row) => (
               <TableRow
-                key={row.name}
+                key={row.id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <TableCell component="th" scope="row">

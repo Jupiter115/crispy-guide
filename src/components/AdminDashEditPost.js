@@ -1,13 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { LoginProvider } from "./Admin";
+import ProductCard from "./ProductCard";
+import seeds from "../data/seeds.json";
+import DeleteIcon from "@mui/icons-material/Delete";
 
-export default function AdminDashNewPost() {
-  const login = useContext(LoginProvider);
-  console.log("Post " + login);
-
+export default function AdminDashEditPost() {
   const navigate = useNavigate();
   return (
     <div>
@@ -16,6 +15,13 @@ export default function AdminDashNewPost() {
           <KeyboardBackspaceIcon /> Cancel
         </Button>
       </div>
+      <ProductCard
+        title={seeds[0].title}
+        description={seeds[0].description}
+        imageUrl={seeds[0].image}
+        salePrice={seeds[0]["price"]}
+        origPrice={seeds[0]["orig"]}
+      />
       <form action="submit">
         <label htmlFor="title">Title: </label>
         <br />
@@ -43,6 +49,12 @@ export default function AdminDashNewPost() {
         <br />
         <button>Post</button>
       </form>
+
+      <br />
+      <br />
+      <Button variant="contained" color="error">
+        DELETE <DeleteIcon fontSize="small" />
+      </Button>
     </div>
   );
 }
