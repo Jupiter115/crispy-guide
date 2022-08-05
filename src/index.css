@@ -22,13 +22,15 @@ PRODUCT CARD
 
 /* Working with css grid to make a more responsive design so we dont have to use 
 a lot of media queries */
+.header-title{
+  padding-left:60px;
+}
 
 .card-container{
   display:grid;
   grid-template-columns: repeat(auto-fit,20rem);
   align-items:center;
   align-self: start;
-
 }
 .product-title{
   width:100%;
@@ -48,7 +50,8 @@ a lot of media queries */
 .product-container .img{
   overflow: hidden;
   width: 100%;
-  min-height: 10vh;
+  height:auto;
+  max-height: 100%;
   height:auto;
   margin:23px;
 
