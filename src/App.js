@@ -7,6 +7,7 @@ import Test from "./components/Test";
 import AdminDashNewPost from "./components/AdminDashNewPost";
 import AdminDashEditPost from "./components/AdminDashEditPost";
 import AdminDash from "./components/AdminDash";
+import ProductDescription from "./components/ProductDescription";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/admin/post" element={<AdminDashNewPost />} />
         <Route path="/admin/edit/:id" element={<AdminDashEditPost />} />
         <Route path="/test" element={<Test />} />
+        <Route path = "/Product" element = {<ProductDescription />} />
       </Routes>
       <Footer />
     </div>
