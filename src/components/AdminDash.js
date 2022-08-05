@@ -1,8 +1,10 @@
+
 import React, { useState, useEffect, useContext } from "react";
 import seeds from "../data/seeds.json";
 
 import throbber from "../assets/180-ring-with-bg.svg";
 import { LoginProvider } from "./Admin";
+
 
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -15,7 +17,6 @@ import EditIcon from "@mui/icons-material/Edit";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import { red } from "@mui/material/colors";
-
 // import EditIcon from "@mui/icons-material/Edit";
 
 // const axios = require("axios");
@@ -57,6 +58,7 @@ export default function AdminDash() {
         item.description,
         "$" + item["orig"],
         "$" + item["price"],
+
         <EditIcon />
       )
     );
@@ -107,5 +109,6 @@ export default function AdminDash() {
         </Table>
       </TableContainer>
     </>
+
   );
 }
