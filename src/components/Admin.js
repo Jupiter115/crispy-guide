@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from "react";
-import AdminDash from "./AdminDash";
 import { Alert, AlertTitle } from "@mui/material";
+import { Link, useNavigate } from "react-router-dom";
+import AdminDash from "./AdminDash";
+
+//Context provider
+export const LoginProvider = React.createContext();
 
 export default function Admin() {
+  const navigate = useNavigate();
+
   //Remove value from useState before production
   const [input, setInput] = useState("bestjups");
   const [showDash, setShowDash] = useState(false);
@@ -17,6 +23,8 @@ export default function Admin() {
     if (input !== process.env.REACT_APP_PW) {
       setWarning(true);
       setInterval(() => setWarning(false), 10000);
+    } else {
+      navigate("/admin/dash/");
     }
   }
   useEffect(() => {
@@ -25,7 +33,7 @@ export default function Admin() {
 
   if (!showDash) {
     return (
-      <div>
+      <div className="Admin_div">
         Admin Enter your password
         {warning && (
           <Alert severity="error" variant="filled">
@@ -38,7 +46,12 @@ export default function Admin() {
         </form>
       </div>
     );
-  } else {
-    return <AdminDash />;
   }
+  // else {
+  //   return (
+  //     <LoginProvider.Provider value={showDash}>
+  //       <AdminDash />
+  //     </LoginProvider.Provider>
+  //   );
+  // }
 }
