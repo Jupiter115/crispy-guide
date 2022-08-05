@@ -9,12 +9,12 @@ export default function ProductCard(props) {
       <Card className = "product-container">
 
         <Card.Title className = "product-title">{props.title.length > 50 ? props.title.slice (0,50) + "..." : props.title}</Card.Title>
-        <Card.Body className="image-container">
+      
 
         <Link to = "/Product">
           <Card.Img src={props.imageUrl} alt="productPic" />
        </Link>
-        </Card.Body>
+      
        
        
         <Card.Body className = "price-container">
