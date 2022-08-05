@@ -3,19 +3,19 @@ import { Card } from "react-bootstrap";
 import "../index.css"
 export default function ProductCard(props) {
   return (
-    <div>
+    <div className = "card-container">
       <Card className = "product-container">
+        <Card.Title className = "product-title">{props.title.length > 50 ? props.title.slice (0,50) + "..." : props.title}</Card.Title>
         <Card.Img className ="img" src={props.imageUrl} alt="productPic" />
-        <Card.Body>
-          <Card.Title>{props.title}</Card.Title>
-          <Card.Text>
-            {props.description}
-          </Card.Text>
+       
+       
+        <Card.Body className = "price-container">
+    
           <Card.Text className = "sale-price">
-            {props.salePrice}
+            $  {props.salePrice}
           </Card.Text>
           <Card.Text className = "orig-price">
-            {props.origPrice}
+            $  {props.origPrice}
           </Card.Text>
         </Card.Body>
       </Card>

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function Products() {
   return (
-    <div>
+    <div className="card-container">
       {products.map((product, index) => (
         <ProductCard
           key={index}
