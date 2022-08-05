@@ -85,3 +85,9 @@ Stephen Wong
 ![Product Page](./assets/planning/product-page.jpg)
 ![Mobile Page](./assets/planning/mobile-landing-page.jpg)
 ![Admin Page](./assets/planning/admin-page.jpg)
+
+## TECHNOLOGIES USED
+
+Axios
+React Material UI
+React Router Dom
