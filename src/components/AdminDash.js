@@ -55,8 +55,8 @@ export default function AdminDash() {
       createData(
         item.title,
         item.description,
-        "$" + item["orig-price"],
-        "$" + item["sale-price"],
+        "$" + item["orig"],
+        "$" + item["price"],
         <EditIcon />
       )
     );
