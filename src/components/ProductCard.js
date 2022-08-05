@@ -5,7 +5,7 @@ export default function ProductCard(props) {
   return (
     <div>
       <Card className = "product-container">
-        <Card.Img src={props.imageUrl} alt="productPic" />
+        <Card.Img className ="img" src={props.imageUrl} alt="productPic" />
         <Card.Body>
           <Card.Title>{props.title}</Card.Title>
           <Card.Text>

@@ -11,10 +11,23 @@
   --font-body: 'Raleway', sans-serif;
 }
 
-* {
+/* * {
   outline: 1px solid blue
-}
+} */
 
 /**************************************************************************
 PRODUCT CARD
 **************************************************************************/
+.product-container{
+  display:flex;
+  flex-wrap:wrap;
+  border-radius: 40px;
+  box-shadow: 4px 4px;
+  padding: 20px 0;
+  margin: 20px;
+}
+.product-container .img{
+  display: flex;
+  overflow: hidden;
+
+}
