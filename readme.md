@@ -2,7 +2,7 @@
 
 ## PROJECT DESCRIPTION
 
-Affiliate marketing app designed to display and promote a list of product deals to the audience. The audience may view the products, see a brief description, a link to the product, the price, an image of the product, and the name of the product. The admin of the site will have a separate login to edit, post, and delete products.
+Affliate marketing app designed to display and promote a list of product deals to the audience. The audience may view the products, see a brief description, a link to the product, the price, an image of the product, and the name of the product. The admin of the site will have a separate login to edit, post, and delete products.
 
 ## PROJECT MANAGER
 
