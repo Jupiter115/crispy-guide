@@ -1,10 +1,8 @@
-
 import React, { useState, useEffect, useContext } from "react";
 import seeds from "../data/seeds.json";
 
 import throbber from "../assets/180-ring-with-bg.svg";
 import { LoginProvider } from "./Admin";
-
 
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -49,7 +47,6 @@ export default function AdminDash() {
     return { name, description, orig, price, edit };
   }
 
-  // const rows = [createData("Frozen yoghurt", 159, 6.0, 24, 4.0, "Url")];
   const rows = [];
   seeds.forEach((item) => {
     rows.push(
@@ -109,6 +106,5 @@ export default function AdminDash() {
         </Table>
       </TableContainer>
     </>
-
   );
 }
