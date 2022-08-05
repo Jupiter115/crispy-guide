@@ -47,50 +47,50 @@ export default function AdminDash() {
   //Table Settings
   function createData(name, description, orig, price, edit) {
     return { name, description, orig, price, edit };
-  }
+}
 
   // const rows = [createData("Frozen yoghurt", 159, 6.0, 24, 4.0, "Url")];
-  const rows = [];
-  seeds.forEach((item) => {
-    rows.push(
-      createData(
-        item.title,
-        item.description,
-        "$" + item["orig"],
-        "$" + item["price"],
+const rows = [];
+    seeds.forEach((item) => {
+        rows.push(
+            createData(
+            item.title,
+            item.description,
+            "$" + item["orig"],
+            "$" + item["price"],
 
-        <EditIcon />
-      )
-    );
-  });
+            <EditIcon />
+            )
+        );
+    });
 
   //Loading Sreen
-  if (loading) {
+    if (loading) {
     return <img src={throbber} alt="Throbber" />;
-  }
+}
 
   //Main Dash
-  return (
+return (
     <>
-      <Button variant="outlined" size="large">
+        <Button variant="outlined" size="large">
         <Link to="/admin/post"> New Post</Link>
-      </Button>
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 100 }} aria-label="simple table">
-          <TableHead>
-            <TableRow>
-              <TableCell>Item</TableCell>
-              <TableCell align="left">Description</TableCell>
-              <TableCell align="left">Original Price</TableCell>
-              <TableCell align="left">Sale Price</TableCell>
-              <TableCell align="center"></TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row) => (
-              <TableRow
-                key={row.name}
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+        </Button>
+        <TableContainer component={Paper}>
+            <Table sx={{ minWidth: 100 }} aria-label="simple table">
+                <TableHead>
+                    <TableRow>
+                        <TableCell>Item</TableCell>
+                        <TableCell align="left">Description</TableCell>
+                        <TableCell align="left">Original Price</TableCell>
+                        <TableCell align="left">Sale Price</TableCell>
+                        <TableCell align="center"></TableCell>
+                    </TableRow>
+                </TableHead>
+            <TableBody>
+                {rows.map((row) => (
+                    <TableRow
+                        key={row.name}
+                        sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
                   {row.name}
