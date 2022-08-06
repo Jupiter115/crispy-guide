@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
-import { Button } from "@mui/material";
+import { Button, Checkbox } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import seeds from "../data/seeds.json";
@@ -33,6 +33,15 @@ export default function AdminDashEditPost() {
       });
   };
 
+  const [prodVal, setProdVal] = useState({});
+  const fetchData = () => {
+    axios
+      .get(`https://mysterious-temple-52384.herokuapp.com/products/${id}`)
+      .then((res) => setProdVal(res.data));
+  };
+  useEffect(fetchData, []);
+  useEffect(() => console.log(prodVal), [prodVal]);
+
   return (
     <div>
       <div>
@@ -40,13 +49,6 @@ export default function AdminDashEditPost() {
           <KeyboardBackspaceIcon /> Cancel
         </Button>
       </div>
-      <ProductCard
-        title={seeds[0].title}
-        description={seeds[0].description}
-        imageUrl={seeds[0].image}
-        salePrice={seeds[0]["price"]}
-        origPrice={seeds[0]["orig"]}
-      />
       <form action="submit" onSubmit={handleSubmit}>
         <label htmlFor="title">Title: </label>
         <br />
@@ -56,15 +58,28 @@ export default function AdminDashEditPost() {
           id="title"
           rows="2"
           cols="50"
+          defaultValue={prodVal.title}
         />
         <br />
         <label htmlFor="orig">Original Price</label>
         <br />
-        <input onChange={handleChange} type="number" id="orig" step=".01" />
+        <input
+          onChange={handleChange}
+          type="number"
+          id="orig"
+          step=".01"
+          defaultValue={prodVal.orig}
+        />
         <br />
         <label htmlFor="price">Sale Price</label>
         <br />
-        <input onChange={handleChange} type="number" id="price" step=".01" />
+        <input
+          onChange={handleChange}
+          type="number"
+          id="price"
+          step=".01"
+          defaultValue={prodVal.price}
+        />
         <br />
         <label htmlFor="description">Description</label>
         <br />
@@ -74,6 +89,7 @@ export default function AdminDashEditPost() {
           id="description"
           rows="10"
           cols="50"
+          defaultValue={prodVal.description}
         />
         <br />
         <label htmlFor="image">Image Url</label>
@@ -84,6 +100,20 @@ export default function AdminDashEditPost() {
           id="image"
           rows="2"
           cols="50"
+          defaultValue={prodVal.image}
+        />
+        <br />
+        <img src={prodVal.image} alt="product" />
+        <br />
+        <label htmlFor="link">Product Link</label>
+        <br />
+        <textarea
+          onChange={handleChange}
+          type="text"
+          id="image"
+          rows="2"
+          cols="50"
+          defaultValue={prodVal.link}
         />
         <br />
         <label htmlFor="category">Category</label>
@@ -94,9 +124,15 @@ export default function AdminDashEditPost() {
           id="category"
           rows="2"
           cols="50"
+          defaultValue={prodVal.category}
         />
         <br />
-        <button>Post</button>
+        Check if featured <Checkbox />
+        <br />
+        <br />
+        <Button variant="contained" onClick={handleSubmit}>
+          Post
+        </Button>
       </form>
 
       <br />

@@ -10,7 +10,6 @@ export default function Admin() {
 
   //Remove value from useState before production
   const [input, setInput] = useState("bestjups");
-  const [showDash, setShowDash] = useState(false);
   const [warning, setWarning] = useState(false);
 
   function handleChange(e) {
@@ -18,7 +17,7 @@ export default function Admin() {
   }
   function handleSubmit(e) {
     e.preventDefault();
-    input === process.env.REACT_APP_PW && setShowDash(true);
+
     if (input !== process.env.REACT_APP_PW) {
       setWarning(true);
       setInterval(() => setWarning(false), 10000);
@@ -26,9 +25,6 @@ export default function Admin() {
       navigate("/admin/dash/");
     }
   }
-  useEffect(() => {
-    setShowDash(false);
-  }, []);
 
   return (
     <div className="Admin_div">
