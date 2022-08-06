@@ -47,10 +47,24 @@ export default function AdminDash() {
         item.description,
         "$" + item["orig"],
         "$" + item["price"],
-        <Link to={`/admin/edit/${item._id}`}>Edit</Link>,
+        <Link to={`/admin/edit/${item._id}`}>
+          <EditIcon />
+          <br />
+          Edit
+        </Link>,
         item._id
       )
     );
+  });
+
+  //Window Event Listener
+  let hide = false;
+  window.addEventListener("resize", function () {
+    if (window.matchMedia("(min-width: 500px)").matches) {
+      hide = false;
+    } else {
+      hide = true;
+    }
   });
 
   //Loading Sreen
@@ -62,10 +76,11 @@ export default function AdminDash() {
   return (
     <>
       <Button variant="outlined" size="large">
-        <Link to="/admin/post"> New Post</Link>
+        <Link to="/admin/post">New Post</Link>
       </Button>
+      <br />
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 100 }} aria-label="simple table">
+        <Table sx={{ minWidth: 75 }} aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell>Item</TableCell>
@@ -82,7 +97,9 @@ export default function AdminDash() {
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
-                  {row.name}
+                  {row.name.length > 45
+                    ? row.name.slice(0, 75) + "..."
+                    : row.name}
                 </TableCell>
                 <TableCell align="left">
                   {row.description.length > 75

@@ -19,8 +19,7 @@ function App() {
         <Route path="/admin/dash" element={<AdminDash />} />
         <Route path="/admin/post" element={<AdminDashNewPost />} />
         <Route path="/admin/edit/:id" element={<AdminDashEditPost />} />
-        <Route path="/test" element={<Test />} />
-        <Route path = "/Product" element = {<ProductDescription />} />
+        <Route path="/product/:id" element={<ProductDescription />} />
       </Routes>
       <Footer />
     </div>
