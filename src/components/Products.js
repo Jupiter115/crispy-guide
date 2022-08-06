@@ -3,6 +3,7 @@ import ProductCard from "./ProductCard";
 // import products from "../data/seeds.json";
 import { Link } from "react-router-dom";
 import throbber from "../assets/180-ring-with-bg.svg";
+import Search from "./Search";
 
 const axios = require("axios");
 
@@ -22,6 +23,7 @@ export default function Products() {
 
   return (
     <div>
+      <Search />
       {loading ? (
         <img src={throbber} />
       ) : (
