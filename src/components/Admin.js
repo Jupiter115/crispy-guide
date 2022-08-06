@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Alert, AlertTitle } from "@mui/material";
-import { Link, useNavigate } from "react-router-dom";
-import AdminDash from "./AdminDash";
+import { useNavigate } from "react-router-dom";
 
 //Context provider
 export const LoginProvider = React.createContext();
 
 export default function Admin() {
   const navigate = useNavigate();
-
 
   //Remove value from useState before production
   const [input, setInput] = useState("bestjups");
@@ -32,28 +30,18 @@ export default function Admin() {
     setShowDash(false);
   }, []);
 
-  if (!showDash) {
-    return (
-      <div className="Admin_div">
-        Admin Enter your password
-        {warning && (
-          <Alert severity="error" variant="filled">
-            <AlertTitle>Invalid password!</AlertTitle> Please try again.
-          </Alert>
-        )}
-        <form onSubmit={handleSubmit}>
-          <input type="text" onChange={handleChange} value={input} />
-          <button type="submit">Enter</button>
-        </form>
-      </div>
-    );
-  }
-  // else {
-  //   return (
-  //     <LoginProvider.Provider value={showDash}>
-  //       <AdminDash />
-  //     </LoginProvider.Provider>
-  //   );
-  // }
-
+  return (
+    <div className="Admin_div">
+      Admin Enter your password
+      {warning && (
+        <Alert severity="error" variant="filled">
+          <AlertTitle>Invalid password!</AlertTitle> Please try again.
+        </Alert>
+      )}
+      <form onSubmit={handleSubmit}>
+        <input type="text" onChange={handleChange} value={input} />
+        <button type="submit">Enter</button>
+      </form>
+    </div>
+  );
 }
