@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Alert, AlertTitle } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { Button } from "@mui/material";
+import "./Admin.css";
 
 //Context provider
 export const LoginProvider = React.createContext();
@@ -27,16 +29,23 @@ export default function Admin() {
   }
 
   return (
-    <div className="Admin_div">
-      Admin Enter your password
+    <div className="admin_div">
+      <h2 className="admin_h2">Admin Sign In</h2>
       {warning && (
         <Alert severity="error" variant="filled">
           <AlertTitle>Invalid password!</AlertTitle> Please try again.
         </Alert>
       )}
       <form onSubmit={handleSubmit}>
-        <input type="text" onChange={handleChange} value={input} />
-        <button type="submit">Enter</button>
+        <input
+          type="text"
+          onChange={handleChange}
+          value={input}
+          className="admin_input"
+        />
+        <Button className="admin_button" type="submit" variant="contained">
+          Sign In
+        </Button>
       </form>
     </div>
   );
