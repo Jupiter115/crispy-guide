@@ -15,6 +15,14 @@ Stephen Wong
 - Yu Xiong
 - Stephen Wong
 
+## APP REQUIREMENTS
+
+- RESTful API using technologies including Node, Express, and Mongoose that serves JSON
+  - At least 1 User Model
+  - RESTful architecture
+  - CRUB App
+- Front-end React App that makes request to the API
+
 ## MVP
 
 - Mongo Atlas DB with a document of products.

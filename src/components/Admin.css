@@ -1,0 +1,30 @@
+button.admin_button {
+  border-radius: 25px;
+  width: 100%
+}
+
+.admin_div {
+  max-width: 500px;
+  padding: 2rem;
+  border: 2px solid rgba(128, 128, 128, 0.66);
+  border-radius: 10px;
+  margin: 0 auto;
+  /* background-color:   var(--clr-accent1); */
+}
+
+.admin_input {
+  width: 100%;
+  height: 2rem;
+  border-radius: 5px;
+  margin: 2rem 0 ;
+  border: 1px solid var(--clr-accent2);
+}
+
+.admin_input:focus {
+  outline: 2px solid var(--clr-accent3);
+}
+
+.admin_h2 {
+  margin: 0;
+  padding: 0;
+}
