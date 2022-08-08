@@ -37,7 +37,8 @@ a lot of media queries */
   grid-template-columns: repeat(auto-fit,20rem);
   justify-content: center;
   background-color: var(--clr-secondary);
-  grid-gap:70px;
+  grid-gap:50px;
+  
  
   
 }
@@ -51,7 +52,7 @@ a lot of media queries */
 .product-container{
   
   border-radius: 25px;
-  box-shadow: 2px 2px 2px;
+  box-shadow: 2px 2px 2px 2px lightgray;
   padding: 30px 0;
   margin: 35px;
   min-width: 20vw;
@@ -61,13 +62,8 @@ a lot of media queries */
 }
 
 .card-img{
- 
-
   width: auto;
   height:20vh;
-  
- 
-
 }
 
 p.sale-price.card-text{

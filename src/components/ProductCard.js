@@ -8,7 +8,7 @@ export default function ProductCard(props) {
     <Container className = "card-container">
       <Card className = "product-container">
 
-        <Card.Title className = "product-title">{props.title.length > 50 ? props.title.slice (0,50) + "..." : props.title}</Card.Title>
+        <Card.Title  className = "product-title">{props.title.length > 50 ? props.title.slice (0,50) + "..." : props.title}</Card.Title>
       
 
         <Link to = "/Product">
