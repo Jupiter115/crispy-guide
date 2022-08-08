@@ -1,3 +1,23 @@
+/**************************************************************************
+GLOBAL
+**************************************************************************/
+
+.adminDash_container, .adminPost_container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+button.adminDash_button{
+  margin: 2rem 0; 
+  font-family: var(--font-body);
+  font-weight: 600;
+  background-color: var(--clr-accent3);
+  padding: .5rem 3rem;
+}
+/**************************************************************************
+LOGIN
+**************************************************************************/
+
 button.admin_button {
   border-radius: 25px;
   width: 100%
@@ -29,17 +49,8 @@ button.admin_button {
   padding: 0;
 }
 
-.adminDash_container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
 
-button.adminDash_button{
-  margin: 2rem 0; 
-  font-family: var(--font-body);
-  font-weight: 600;
-  background-color: var(--clr-accent3);
-}
+
 button.adminDash_button:hover{
   background-color: var(--clr-accent2);
 }
@@ -55,4 +66,43 @@ svg.adminDash_edit {
 }
 svg.adminDash_edit:hover {
   color:  var(--clr-accent1)
+}
+
+/**************************************************************************
+NEW & EDIT POST
+**************************************************************************/
+
+.adminPost_container{
+  max-width: 500px;
+  min-width: 250px;
+  padding: clamp(.5rem, 2vw, 2rem);
+  border: 2px solid rgba(128, 128, 128, 0.66);
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+button.adminPost_cancel{
+  margin-bottom: 1rem;
+  color: var(--clr-accent1);
+  font-family: var(--font-body);
+}
+
+.adminPost_input {
+  border-radius: 5px;
+  outline: 0;
+  border: 0;
+  margin: .5rem 0;
+  padding: .5rem;
+  font-family: var(--font-body);
+}
+.width-100 {
+  width: 100%;
+}
+.font-body {
+  font-family: var(--font-body);
+}
+
+span.adminDash_checkbox {
+  color: var(--clr-accent1) !important;
+  outline: .5px;
 }
