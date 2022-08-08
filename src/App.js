@@ -8,7 +8,6 @@ import AdminDashNewPost from "./components/AdminDashNewPost";
 import AdminDashEditPost from "./components/AdminDashEditPost";
 import AdminDash from "./components/AdminDash";
 import ProductDescription from "./components/ProductDescription";
-
 function App() {
   return (
     <div className="App">
