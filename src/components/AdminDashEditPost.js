@@ -17,7 +17,7 @@ export default function AdminDashEditPost() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .put(
+      .patch(
         `https://mysterious-temple-52384.herokuapp.com/products/${id}`,
         product
       )
@@ -110,7 +110,7 @@ export default function AdminDashEditPost() {
         <textarea
           onChange={handleChange}
           type="text"
-          id="image"
+          id="link"
           rows="2"
           cols="50"
           defaultValue={prodVal.link}
