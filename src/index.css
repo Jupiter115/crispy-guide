@@ -14,6 +14,13 @@
 body {
   background: linear-gradient(332deg, var(--clr-secondary) 0%, var(--clr-primary) 100%);
 }
+/**************************************************************************
+HERO
+**************************************************************************/
+
+
+
+
 
 /**************************************************************************
 HEADER 
@@ -28,6 +35,7 @@ header{
   align-items: center;
   gap: clamp(.5rem, 1vw, 4rem);
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .header_logo {
@@ -89,6 +97,7 @@ a lot of media queries */
 }
 .product-container{
   border-radius: 25px;
+
   box-shadow: 2px 2px 3px 3px #5e4f401d;
   padding: 30px;
   background-color: white;
@@ -101,6 +110,7 @@ a lot of media queries */
   max-width: 100%;
   width: auto;
   margin: 1rem auto;
+
 }
 
 p.sale-price.card-text{

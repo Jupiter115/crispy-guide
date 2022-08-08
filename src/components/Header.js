@@ -8,6 +8,7 @@ export default function Header() {
       <div>
         <img src={jupiter} alt="logo" className="header_logo" />
       </div>
+
       <h1 className="header_title">
         <Link to="/">Jupiter Deals</Link>
       </h1>
