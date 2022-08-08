@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import { Button, Checkbox } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -14,11 +14,14 @@ export default function AdminDashNewPost() {
     price: 0,
     description: "",
     image: "",
+    link:"",
     category: "",
+    hero: false
   });
 
+
   const handleChange = (event) => {
-    setProduct({ ...product, [event.target.id]: event.target.value });
+    setProduct({ ...product, [event.target.id]: event.target.value});
   };
 
   const handleSubmit = (event) => {
@@ -30,6 +33,11 @@ export default function AdminDashNewPost() {
       });
   };
 
+  const checkHero = (event) => {
+    setProduct({...product, hero: event.target.checked});
+  }
+
+
   return (
     <div>
       <div>
@@ -37,33 +45,7 @@ export default function AdminDashNewPost() {
           <KeyboardBackspaceIcon /> Cancel
         </Button>
       </div>
-      {/*       <form action="submit" onSubmit={handleSubmit}>
-        <label htmlFor="title">Title: </label>
-        <br />
-        <input onChange={handleChange} type="text" id="title"></input>
-        <br />
-        <label htmlFor="orig">Original Price</label>
-        <br />
-        <input onChange={handleChange} type="number" id="orig"></input>
-        <br />
-        <label htmlFor="price">Sale Price</label>
-        <br />
-        <input onChange={handleChange} type="number" id="price"></input>
-        <br />
-        <label htmlFor="description">Description</label>
-        <br />
-        <textarea onChange={handleChange} type="text" id="description" rows="5" cols="25"></textarea>
-        <br />
-        <label htmlFor="image">Image Url</label>
-        <br />
-        <input onChange={handleChange} type="text" id="image"></input>
-        <br />
-        <label htmlFor="category">Category</label>
-        <br />
-        <input onChange={handleChange} type="text" id="category"></input>
-        <br />
-        <button>Post</button>
-      </form> */}
+      
 
       <form action="submit" onSubmit={handleSubmit}>
         <label htmlFor="title">Title: </label>
@@ -109,7 +91,7 @@ export default function AdminDashNewPost() {
         <textarea
           onChange={handleChange}
           type="text"
-          id="image"
+          id="link"
           rows="2"
           cols="50"
         />
@@ -124,7 +106,7 @@ export default function AdminDashNewPost() {
           cols="50"
         />
         <br />
-        Check if featured <Checkbox />
+        Check if featured <Checkbox onClick={checkHero} />
         <br />
         <br />
         <Button variant="contained" onClick={handleSubmit}>
