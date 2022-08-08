@@ -35,8 +35,8 @@ export default function AdminDash() {
   }, []);
 
   //Table Settings
-  function createData(name, description, orig, price, edit, id) {
-    return { name, description, orig, price, edit, id };
+  function createData(name, description, price, edit, id) {
+    return { name, description, price, edit, id };
   }
 
   const rows = [];
@@ -46,11 +46,22 @@ export default function AdminDash() {
         item.title,
         item.description,
         "$" + item["orig"],
-        "$" + item["price"],
-        <Link to={`/admin/edit/${item._id}`}>Edit</Link>,
+        <Link to={`/admin/edit/${item._id}`}>
+          <EditIcon />
+        </Link>,
         item._id
       )
     );
+  });
+
+  //Window Event Listener
+  let hide = false;
+  window.addEventListener("resize", function () {
+    if (window.matchMedia("(min-width: 500px)").matches) {
+      hide = false;
+    } else {
+      hide = true;
+    }
   });
 
   //Loading Sreen
@@ -62,15 +73,15 @@ export default function AdminDash() {
   return (
     <>
       <Button variant="outlined" size="large">
-        <Link to="/admin/post"> New Post</Link>
+        <Link to="/admin/post">New Post</Link>
       </Button>
+      <br />
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 100 }} aria-label="simple table">
+        <Table sx={{ minWidth: 75 }} aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell>Item</TableCell>
               <TableCell align="left">Description</TableCell>
-              <TableCell align="left">Original Price</TableCell>
               <TableCell align="left">Sale Price</TableCell>
               <TableCell align="center"></TableCell>
             </TableRow>
@@ -82,14 +93,15 @@ export default function AdminDash() {
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
-                  {row.name}
+                  {row.name.length > 45
+                    ? row.name.slice(0, 75) + "..."
+                    : row.name}
                 </TableCell>
                 <TableCell align="left">
                   {row.description.length > 75
                     ? row.description.slice(0, 75) + "..."
                     : row.description}
                 </TableCell>
-                <TableCell align="left">{row.orig}</TableCell>
                 <TableCell align="left">{row.price}</TableCell>
                 <TableCell align="center">{row.edit}</TableCell>
               </TableRow>
