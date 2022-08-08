@@ -28,3 +28,31 @@ button.admin_button {
   margin: 0;
   padding: 0;
 }
+
+.adminDash_container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+button.adminDash_button{
+  margin: 2rem 0; 
+  font-family: var(--font-body);
+  font-weight: 600;
+  background-color: var(--clr-accent3);
+}
+button.adminDash_button:hover{
+  background-color: var(--clr-accent2);
+}
+
+a.adminDash_a {
+  color: white;
+  text-decoration: none;
+  font-family: var(--);
+}
+
+svg.adminDash_edit {
+  color:  var(--clr-accent3);
+}
+svg.adminDash_edit:hover {
+  color:  var(--clr-accent1)
+}
