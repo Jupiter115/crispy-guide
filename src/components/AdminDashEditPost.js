@@ -14,10 +14,13 @@ export default function AdminDashEditPost() {
   const handleChange = (event) => {
     setProduct({ ...product, [event.target.id]: event.target.value });
   };
+  const checkHero = (event) => {
+    setProduct({...product, hero: event.target.checked});
+  };
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .put(
+      .patch(
         `https://mysterious-temple-52384.herokuapp.com/products/${id}`,
         product
       )
@@ -110,7 +113,7 @@ export default function AdminDashEditPost() {
         <textarea
           onChange={handleChange}
           type="text"
-          id="image"
+          id="link"
           rows="2"
           cols="50"
           defaultValue={prodVal.link}
@@ -127,7 +130,7 @@ export default function AdminDashEditPost() {
           defaultValue={prodVal.category}
         />
         <br />
-        Check if featured <Checkbox />
+        Check if featured <Checkbox onChange={checkHero} />
         <br />
         <br />
         <Button variant="contained" onClick={handleSubmit}>

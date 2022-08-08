@@ -1,37 +1,33 @@
 import React, { useState, useEffect } from "react";
-import seeds from "../data/seeds.json";
 
 import throbber from "../assets/180-ring-with-bg.svg";
 
 import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
+import {
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+} from "@mui/material/";
+
 import EditIcon from "@mui/icons-material/Edit";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-
-// import EditIcon from "@mui/icons-material/Edit";
 
 const axios = require("axios");
 
 export default function AdminDash() {
   //Context Consumer
-
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch("https://mysterious-temple-52384.herokuapp.com/");
-      const data = await res.json();
-      setData(data);
-      setLoading(false);
-    };
-    fetchData();
+    axios
+      .get("https://mysterious-temple-52384.herokuapp.com/")
+      .then((res) => setData(res.data))
+      .then(() => setLoading(false));
   }, []);
 
   //Table Settings
@@ -47,21 +43,11 @@ export default function AdminDash() {
         item.description,
         "$" + item["orig"],
         <Link to={`/admin/edit/${item._id}`}>
-          <EditIcon />
+          <EditIcon className="adminDash_edit" />
         </Link>,
         item._id
       )
     );
-  });
-
-  //Window Event Listener
-  let hide = false;
-  window.addEventListener("resize", function () {
-    if (window.matchMedia("(min-width: 500px)").matches) {
-      hide = false;
-    } else {
-      hide = true;
-    }
   });
 
   //Loading Sreen
@@ -71,18 +57,20 @@ export default function AdminDash() {
 
   //Main Dash
   return (
-    <>
-      <Button variant="outlined" size="large">
-        <Link to="/admin/post">New Post</Link>
+    <div className="adminDash_container">
+      <Button className="adminDash_button" variant="contained" size="large">
+        <Link className="adminDash_a" to="/admin/post">
+          New Post
+        </Link>
       </Button>
       <br />
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 75 }} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Item</TableCell>
-              <TableCell align="left">Description</TableCell>
-              <TableCell align="left">Sale Price</TableCell>
+              <TableCell>ITEM TITLE</TableCell>
+              <TableCell align="left">DESCRIPTION</TableCell>
+              <TableCell align="left">SALE PRICE</TableCell>
               <TableCell align="center"></TableCell>
             </TableRow>
           </TableHead>
@@ -109,6 +97,6 @@ export default function AdminDash() {
           </TableBody>
         </Table>
       </TableContainer>
-    </>
+    </div>
   );
 }
