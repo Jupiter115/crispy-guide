@@ -12,7 +12,7 @@
 }
 
 body {
-  background: linear-gradient(332deg, var(--clr-secondary) 0%, var(--clr-primary) 100%);
+  background: linear-gradient(332deg, var(--clr-primary) 100%, var(--clr-secondary) 0%);
 }
 /**************************************************************************
 HERO
@@ -85,8 +85,8 @@ a lot of media queries */
   grid-gap: clamp(1rem, 3vw, 3rem)
 }
 .image-container{
-
   max-width: 100%;
+  min-height: 138px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,7 +96,6 @@ a lot of media queries */
 }
 .product-container{
   border-radius: 25px;
-
   box-shadow: 2px 2px 3px 3px #5e4f401d;
   padding: 30px;
   background-color: white;
@@ -109,31 +108,75 @@ a lot of media queries */
   max-width: 100%;
   width: auto;
   margin: 1rem auto;
-
 }
 
-p.sale-price.card-text{
-  font-family: var(--font-body);
-  text-align: center;
-  font-weight: 500;
+@media (min-width: 400px) {
+  .card-img {
+    min-height: 150px;
+    
+  }
+  .image-container{
+    min-height: 150px;
+    margin: 16px 0;
+  }
 }
-p.orig-price.card-text{
-  font-family: var(--font-body);
-  
-  text-align: center;
-  font-weight: 500;
-}
+
+
+
 .product-title.card-title.h5{
   font-family: var(--font-title);
   text-align: center;
   font-weight:600;
-}
+  margin: 0;
 
+}
+p.orig-price.card-text{
+  font-family: var(--font-body);
+  text-align: center;
+  font-weight: 500;
+  color: var(--clr-accent2)
+}
+p.sale-price.card-text{
+  font-family: var(--font-body);
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+  color: var(--clr-text)
+}
 
 .strikethrough {
   text-decoration: line-through;
 }
 
+button.productCard_button{
+  margin: 2rem auto; 
+  font-family: var(--font-body);
+  font-weight: 600;
+  background-color: var(--clr-accent3);
+  padding: .5rem 3rem;
+  width: 100%;
+}
+
+button.productCard_button:hover{
+  background-color: var(--clr-accent2);
+}
+
+a.productCard_details {
+  text-decoration: none !important;
+}
+
+/**************************************************************************
+PRODUCT PAGE
+**************************************************************************/
+button.product_adminButton {
+ margin-top: 3rem;
+}
+a.product_adminLink{
+  text-decoration: none;
+  color: black;
+}
 
 /**************************************************************************
 FOOTER

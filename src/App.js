@@ -3,7 +3,6 @@ import Header from "./components/Header";
 import Products from "./components/Products";
 import { Route, Routes } from "react-router-dom";
 import Admin from "./components/Admin";
-import Test from "./components/Test";
 import AdminDashNewPost from "./components/AdminDashNewPost";
 import AdminDashEditPost from "./components/AdminDashEditPost";
 import AdminDash from "./components/AdminDash";
