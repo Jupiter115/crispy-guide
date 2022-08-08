@@ -2,9 +2,10 @@
 GLOBAL
 **************************************************************************/
 
-.adminDash_container, .adminPost_container {
+.adminDash_container, .adminPost_container, .adminEdit_container {
   max-width: 1200px;
   margin: 0 auto;
+  width: 95vw;
 }
 
 button.adminDash_button{
@@ -13,6 +14,10 @@ button.adminDash_button{
   font-weight: 600;
   background-color: var(--clr-accent3);
   padding: .5rem 3rem;
+}
+
+button.adminDash_button-delete{
+  background-color: red! important;
 }
 /**************************************************************************
 LOGIN
@@ -72,7 +77,7 @@ svg.adminDash_edit:hover {
 NEW & EDIT POST
 **************************************************************************/
 
-.adminPost_container{
+.adminPost_container, .adminEdit_container{
   max-width: 500px;
   min-width: 250px;
   padding: clamp(.5rem, 2vw, 2rem);
@@ -105,4 +110,15 @@ button.adminPost_cancel{
 span.adminDash_checkbox {
   color: var(--clr-accent1) !important;
   outline: .5px;
+}
+
+.adminEdit_img {
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.073);
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  max-height: 300px;
+  max-width: 80%;
+  width: 100%;
 }
