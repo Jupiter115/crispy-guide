@@ -7,6 +7,7 @@ import { Button } from "@mui/material";
 export default function ProductCard(props) {
   const { image, orig, price, title, _id } = props.item;
   return (
+
     <Container>
       <Card className="product-container">
         <Card.Title className="product-title">

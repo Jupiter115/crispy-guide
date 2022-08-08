@@ -15,7 +15,7 @@ export default function AdminDashEditPost() {
     setProduct({ ...product, [event.target.id]: event.target.value });
   };
   const checkHero = (event) => {
-    setProduct({...product, hero: event.target.checked});
+    setProduct({ ...product, hero: event.target.checked });
   };
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -43,17 +43,18 @@ export default function AdminDashEditPost() {
       .then((res) => setProdVal(res.data));
   };
   useEffect(fetchData, []);
-  useEffect(() => console.log(prodVal), [prodVal]);
 
   return (
-    <div>
-      <div>
-        <Button onClick={() => navigate(-1)}>
-          <KeyboardBackspaceIcon /> Cancel
-        </Button>
-      </div>
+    <div className="adminEdit_container">
+      <h2 className="font-body">Edit Deal</h2>
+      <Button onClick={() => navigate(-1)} className="adminPost_cancel">
+        <KeyboardBackspaceIcon /> Cancel
+      </Button>
+
       <form action="submit" onSubmit={handleSubmit}>
-        <label htmlFor="title">Title: </label>
+        <label className="font-body" htmlFor="title">
+          Product Title:
+        </label>
         <br />
         <textarea
           onChange={handleChange}
@@ -62,9 +63,12 @@ export default function AdminDashEditPost() {
           rows="2"
           cols="50"
           defaultValue={prodVal.title}
+          className="width-100 adminPost_input"
         />
         <br />
-        <label htmlFor="orig">Original Price</label>
+        <label className="font-body" htmlFor="orig">
+          Original Price
+        </label>
         <br />
         <input
           onChange={handleChange}
@@ -72,9 +76,12 @@ export default function AdminDashEditPost() {
           id="orig"
           step=".01"
           defaultValue={prodVal.orig}
+          className="adminPost_input"
         />
         <br />
-        <label htmlFor="price">Sale Price</label>
+        <label className="font-body" htmlFor="price">
+          Sale Price
+        </label>
         <br />
         <input
           onChange={handleChange}
@@ -82,11 +89,15 @@ export default function AdminDashEditPost() {
           id="price"
           step=".01"
           defaultValue={prodVal.price}
+          className="adminPost_input"
         />
         <br />
-        <label htmlFor="description">Description</label>
+        <label className="font-body" htmlFor="description">
+          Description
+        </label>
         <br />
         <textarea
+          className="width-100 adminPost_input"
           onChange={handleChange}
           type="text"
           id="description"
@@ -95,9 +106,12 @@ export default function AdminDashEditPost() {
           defaultValue={prodVal.description}
         />
         <br />
-        <label htmlFor="image">Image Url</label>
+        <label className="font-body" htmlFor="image">
+          Image Url
+        </label>
         <br />
         <textarea
+          className="width-100 adminPost_input"
           onChange={handleChange}
           type="text"
           id="image"
@@ -106,41 +120,53 @@ export default function AdminDashEditPost() {
           defaultValue={prodVal.image}
         />
         <br />
-        <img src={prodVal.image} alt="product" />
+        <img src={prodVal.image} className="adminEdit_img" alt="product" />
         <br />
-        <label htmlFor="link">Product Link</label>
+        <label className="font-body" htmlFor="link">
+          Product Link
+        </label>
         <br />
         <textarea
           onChange={handleChange}
           type="text"
           id="link"
           rows="2"
-          cols="50"
           defaultValue={prodVal.link}
+          className="width-100 adminPost_input"
         />
         <br />
-        <label htmlFor="category">Category</label>
+        <label className="font-body" htmlFor="category">
+          Category
+        </label>
         <br />
         <textarea
           onChange={handleChange}
           type="text"
           id="category"
           rows="2"
-          cols="50"
           defaultValue={prodVal.category}
+          className="width-100 adminPost_input"
         />
         <br />
-        Check if featured <Checkbox onChange={checkHero} />
+        Check if featured{" "}
+        <Checkbox className="adminDash_checkbox" onChange={checkHero} />
         <br />
         <br />
-        <Button variant="contained" onClick={handleSubmit}>
+        <Button
+          variant="contained"
+          onClick={handleSubmit}
+          className="adminDash_button"
+        >
           Post
         </Button>
       </form>
 
-      <br />
-      <br />
-      <Button onClick={handleDelete} variant="contained" color="error">
+      <Button
+        onClick={handleDelete}
+        className="adminDash_button adminDash_button-delete"
+        variant="contained"
+        color="error"
+      >
         DELETE <DeleteIcon fontSize="small" />
       </Button>
     </div>
