@@ -35,7 +35,6 @@ header{
   align-items: center;
   gap: clamp(.5rem, 1vw, 4rem);
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .header_logo {
