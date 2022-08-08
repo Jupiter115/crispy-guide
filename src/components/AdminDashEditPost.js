@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import { Button, Checkbox } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
-import ProductCard from "./ProductCard";
-import seeds from "../data/seeds.json";
 import DeleteIcon from "@mui/icons-material/Delete";
 import axios from "axios";
 
