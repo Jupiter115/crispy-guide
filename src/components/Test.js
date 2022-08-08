@@ -10,7 +10,7 @@ export default function Test() {
   }
 
   useEffect(() => console.log(input), [input]);
-
+  //made some changes
   return (
     <div>
       <input
