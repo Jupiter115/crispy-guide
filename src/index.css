@@ -89,3 +89,14 @@ p.orig-price.card-text{
   text-decoration: line-through;
 }
 
+
+/**************************************************************************
+FOOTER
+**************************************************************************/
+
+footer {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: .75rem;
+  margin-top: 2rem;
+}
