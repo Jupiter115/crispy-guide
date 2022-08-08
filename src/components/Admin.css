@@ -36,7 +36,12 @@ button.admin_button {
 
 button.adminDash_button{
   margin: 2rem 0; 
-
+  font-family: var(--font-body);
+  font-weight: 600;
+  background-color: var(--clr-accent3);
+}
+button.adminDash_button:hover{
+  background-color: var(--clr-accent2);
 }
 
 a.adminDash_a {
@@ -46,8 +51,8 @@ a.adminDash_a {
 }
 
 svg.adminDash_edit {
-  color:  dimgray;
+  color:  var(--clr-accent3);
 }
 svg.adminDash_edit:hover {
-  color:  lightgray;
+  color:  var(--clr-accent1)
 }

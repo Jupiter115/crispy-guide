@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
-import seeds from "../data/seeds.json";
 
 import throbber from "../assets/180-ring-with-bg.svg";
 
 import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
+import {
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+} from "@mui/material/";
+
 import EditIcon from "@mui/icons-material/Edit";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -18,7 +20,6 @@ const axios = require("axios");
 
 export default function AdminDash() {
   //Context Consumer
-
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -47,16 +48,6 @@ export default function AdminDash() {
         item._id
       )
     );
-  });
-
-  //Window Event Listener
-  let hide = false;
-  window.addEventListener("resize", function () {
-    if (window.matchMedia("(min-width: 500px)").matches) {
-      hide = false;
-    } else {
-      hide = true;
-    }
   });
 
   //Loading Sreen
