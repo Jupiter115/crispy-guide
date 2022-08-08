@@ -11,7 +11,7 @@ export default function Header() {
       <h1 className="header_title">
         <Link to="/">Jupiter Deals</Link>
       </h1>
-      <p className='header_subtitle'>The sales are out of this world.</p>
+      <p className="header_subtitle">The sales are out of this world.</p>
     </header>
   );
 }

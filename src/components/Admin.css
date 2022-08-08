@@ -25,7 +25,11 @@ LOGIN
 
 button.admin_button {
   border-radius: 25px;
-  width: 100%
+  width: 100%;
+  background-color: var(--clr-accent3);;
+}
+button.admin_button:hover {
+  background-color: var(--clr-accent2);
 }
 
 .admin_div {
