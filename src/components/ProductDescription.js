@@ -19,6 +19,7 @@ useEffect(() => {
 
             <Card.Img src = {product.image} />
 
+
             <Card.Title>
             {product.title}
             </Card.Title>
@@ -26,6 +27,7 @@ useEffect(() => {
 
             <Card.Body>
                 <Card.Text> 
+
                   Description: {product.description}
                 </Card.Text>
                 <Card.Text>
@@ -33,6 +35,7 @@ useEffect(() => {
                 </Card.Text>
                 <Card.Text>
                   Sale Price: {product.price}
+
                 </Card.Text>
             </Card.Body>
 

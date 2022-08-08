@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import { Button, Checkbox } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -14,14 +14,13 @@ export default function AdminDashNewPost() {
     price: 0,
     description: "",
     image: "",
-    link:"",
+    link: "",
     category: "",
-    hero: false
+    hero: false,
   });
 
-
   const handleChange = (event) => {
-    setProduct({ ...product, [event.target.id]: event.target.value});
+    setProduct({ ...product, [event.target.id]: event.target.value });
   };
 
   const handleSubmit = (event) => {
@@ -34,82 +33,111 @@ export default function AdminDashNewPost() {
   };
 
   const checkHero = (event) => {
-    setProduct({...product, hero: event.target.checked});
-  }
-
+    setProduct({ ...product, hero: event.target.checked });
+  };
 
   return (
-    <div>
-      <div>
-        <Button onClick={() => navigate(-1)}>
-          <KeyboardBackspaceIcon /> Cancel
-        </Button>
-      </div>
-      
+    <div className="adminPost_container">
+      <h2 className="font-body">Add New Deal</h2>
+      <Button onClick={() => navigate(-1)} className="adminPost_cancel">
+        <KeyboardBackspaceIcon /> Cancel
+      </Button>
 
       <form action="submit" onSubmit={handleSubmit}>
-        <label htmlFor="title">Title: </label>
+        <label className="font-body" htmlFor="title">
+          Product Title:
+        </label>
         <br />
         <textarea
           onChange={handleChange}
           type="text"
           id="title"
           rows="2"
-          cols="50"
+          className="width-100 adminPost_input"
         />
         <br />
-        <label htmlFor="orig">Original Price</label>
+        <label className="font-body" htmlFor="orig">
+          Original Price
+        </label>
         <br />
-        <input onChange={handleChange} type="number" id="orig" step=".01" />
+        <input
+          onChange={handleChange}
+          type="number"
+          id="orig"
+          step=".01"
+          className="adminPost_input"
+        />
         <br />
-        <label htmlFor="price">Sale Price</label>
+        <label className="font-body" htmlFor="price">
+          Sale Price
+        </label>
         <br />
-        <input onChange={handleChange} type="number" id="price" step=".01" />
+        <input
+          onChange={handleChange}
+          type="number"
+          id="price"
+          step=".01"
+          className="adminPost_input"
+        />
         <br />
-        <label htmlFor="description">Description</label>
+        <label className="font-body" htmlFor="description">
+          Description
+        </label>
         <br />
         <textarea
+          className="width-100 adminPost_input"
           onChange={handleChange}
           type="text"
           id="description"
           rows="10"
-          cols="50"
         />
         <br />
-        <label htmlFor="image">Image Url</label>
+        <label className="font-body" htmlFor="image">
+          Image Url
+        </label>
         <br />
         <textarea
           onChange={handleChange}
           type="text"
           id="image"
           rows="2"
-          cols="50"
+          className="width-100 adminPost_input"
         />
         <br />
-        <label htmlFor="link">Product Link</label>
+        <label className="font-body" htmlFor="link">
+          Product Link
+        </label>
         <br />
         <textarea
           onChange={handleChange}
           type="text"
           id="link"
           rows="2"
-          cols="50"
+          className="width-100 adminPost_input"
         />
         <br />
-        <label htmlFor="category">Category</label>
+        <label className="font-body" htmlFor="category">
+          Category
+        </label>
         <br />
         <textarea
           onChange={handleChange}
           type="text"
           id="category"
           rows="2"
-          cols="50"
+          className="width-100 adminPost_input"
         />
-        <br />
-        Check if featured <Checkbox onClick={checkHero} />
-        <br />
-        <br />
-        <Button variant="contained" onClick={handleSubmit}>
+
+        <p className="font-body">
+          Check if featured
+          <Checkbox className="adminDash_checkbox" onClick={checkHero} />
+        </p>
+
+        <Button
+          className="adminDash_button"
+          variant="contained"
+          onClick={handleSubmit}
+        >
           Post
         </Button>
       </form>
