@@ -4,25 +4,24 @@ import ProductCard from "./ProductCard";
 import { Link } from "react-router-dom";
 import throbber from "../assets/180-ring-with-bg.svg";
 import Search from "./Search";
-import Hero from "./Hero";
-
+import ProductHero from "./ProductHero";
 
 const axios = require("axios");
 
 export default function Products() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [search, setSearch] = useState("")
+  const [search, setSearch] = useState("");
 
-  const handleChange = (e) =>{
-    e.preventDefault()
-    setSearch(e.target.value)
-  }
+  const handleChange = (e) => {
+    e.preventDefault();
+    setSearch(e.target.value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  }
-
+  };
+  
   useEffect(() => {
     axios
       .get(`https://mysterious-temple-52384.herokuapp.com/`)
@@ -32,24 +31,25 @@ export default function Products() {
 
   return (
     <div>
-      <Search 
-      handleChange = {handleChange}
-      handleSubmit = {handleSubmit}
-      search = {search}
-      
+      <Search
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        search={search}
       />
-    
+
       {loading ? (
         <img src={throbber} alt="trobber" />
       ) : (
         <>
-        <Hero data = {data} />
+          <ProductHero data={data} />
           <div className="card-container">
-            {data.map((product, index) => (
+            {data.map((product) => (
               <ProductCard key={product._id} item={product} />
             ))}
           </div>
+         
         </>
+    
       )}
       <Link to="/admin">
         <p>Admin Login</p>
