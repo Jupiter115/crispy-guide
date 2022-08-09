@@ -105,3 +105,9 @@ MongoDB
 Mongoose
 Express
 React
+
+## PLANNING
+
+Project tracking was conducted on Clickup app. 
+![clickup](https://user-images.githubusercontent.com/20288105/183698127-82bbd3ac-db45-43c6-b028-6c60781a601f.jpg)
+
