@@ -37,8 +37,6 @@ export default function AdminDashNewPost() {
     setProduct({ ...product, hero: event.target.checked });
   };
 
-  useEffect(() => console.log(product), []);
-
   return (
     <div className="adminPost_container">
       <h2 className="font-body">Add New Deal</h2>
