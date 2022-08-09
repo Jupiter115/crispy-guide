@@ -178,12 +178,15 @@ a.product_adminLink{
 /**************************************************************************
 PRODUCT DESCRIPTION PAGE
 **************************************************************************/
+.description {
+
+}
 
 .description-image {
   height:auto;
   max-height: 500px;
   max-width: 500px;
-  width: auto;
+  width: 95%;
   margin: 1rem auto;
 }
 
@@ -194,8 +197,9 @@ PRODUCT DESCRIPTION PAGE
   margin: 0;
 
 }
-.product-link {
-  color: var(--clr-primary)
+a.product-link {
+  color: var(--clr-primary);
+  text-decoration: none;
 }
 
 
