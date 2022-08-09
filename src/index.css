@@ -176,6 +176,30 @@ a.product_adminLink{
 }
 
 /**************************************************************************
+PRODUCT DESCRIPTION PAGE
+**************************************************************************/
+
+.description-image {
+  height:auto;
+  max-height: 500px;
+  max-width: 500px;
+  width: auto;
+  margin: 1rem auto;
+}
+
+.product-description {
+  font-family: var(--font-body);
+  text-align: center;
+  font-weight:600;
+  margin: 0;
+
+}
+.product-link {
+  color: var(--clr-primary)
+}
+
+
+/**************************************************************************
 FOOTER
 **************************************************************************/
 
