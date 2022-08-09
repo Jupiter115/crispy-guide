@@ -85,9 +85,10 @@ NEW & EDIT POST
   max-width: 500px;
   min-width: 250px;
   padding: clamp(.5rem, 2vw, 2rem);
-  border: 2px solid rgba(128, 128, 128, 0.66);
+  border: 1px solid rgba(128, 128, 128, 0.66);
   border-radius: 10px;
   margin: 0 auto;
+
 }
 
 button.adminPost_cancel{
@@ -125,4 +126,43 @@ span.adminDash_checkbox {
   max-height: 300px;
   max-width: 80%;
   width: 100%;
+}
+
+.adminPostGet_beta {
+  color: var(--clr-accent3);
+  font-weight: 600;
+}
+
+/**************************************************************************
+ADMIN DASHNEWPOSTGET
+**************************************************************************/
+
+.adminPostGet_container {
+  margin: 1rem  auto 2rem auto;
+  background-color: rgba(255, 255, 255, 0.484);
+  padding: 2rem 1rem;
+  border-radius: 15px;
+}
+
+.adminPostGet_title{
+  font-family: var(--font-body);
+}
+
+.adminPostGet_form {
+display: flex;
+justify-content: center;
+width: 100%;
+flex-wrap: wrap;
+}
+
+.adminPostGet_input {
+  width: 100%;
+  padding: .5rem;
+  outline: 0;
+  border: 0;
+  border-radius: 5px;
+}
+
+button.adminPostGet_button {
+  color: var(--clr-accent3)
 }
