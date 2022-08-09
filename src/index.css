@@ -10,7 +10,6 @@
   --font-title: 'Poppins', sans-serif;
   --font-body: 'Raleway', sans-serif;
 }
-
 body {
   background: linear-gradient(332deg, var(--clr-primary) 100%, var(--clr-secondary) 0%);
 }
@@ -18,9 +17,7 @@ body {
 HERO
 **************************************************************************/
 
-
-
-
+  
 
 /**************************************************************************
 HEADER 

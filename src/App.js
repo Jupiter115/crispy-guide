@@ -7,10 +7,12 @@ import AdminDashNewPost from "./components/AdminDashNewPost";
 import AdminDashEditPost from "./components/AdminDashEditPost";
 import AdminDash from "./components/AdminDash";
 import ProductDescription from "./components/ProductDescription";
+
 function App() {
   return (
     <div className="App">
       <Header />
+     
       <Routes>
         <Route path="/" element={<Products />} />
         <Route path="/admin" element={<Admin />} />
