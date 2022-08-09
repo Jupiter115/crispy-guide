@@ -9,7 +9,6 @@ import ProductHero from "./ProductHero";
 
 const axios = require("axios");
 
-
 export default function Products() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -43,7 +42,7 @@ export default function Products() {
         <img src={throbber} alt="trobber" />
       ) : (
         <>
-          <HeroData data={data} />
+          <ProductHero data={data} />
           <div className="card-container">
             {data
               .slice(0)
