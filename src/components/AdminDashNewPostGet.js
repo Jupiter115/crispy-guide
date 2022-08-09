@@ -11,9 +11,6 @@ export default function AdminDashNewPostGet(props) {
   };
   const handleClick = (e) => {
     e.preventDefault();
-    if (e.target.value === "") {
-      return;
-    }
     setLoading(true);
     axios
       .get(`https://jupiter-scraper.herokuapp.com/new/${input}`)
@@ -34,7 +31,7 @@ export default function AdminDashNewPostGet(props) {
         information from an Amazon product page. <br />
         <br />
         Don't click too fast or use the same URL over and over again or else
-        you'll break it for 10 minnutes.
+        you'll break it for 10 minutes.
       </p>
       {loading ? (
         <img src={throbber} alt="trobber" />
