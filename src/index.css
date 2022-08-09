@@ -16,23 +16,19 @@ body {
 /**************************************************************************
 HERO
 **************************************************************************/
-.carousel-img{
-  display:flex;
-  justify-content: space-around;
-  margin: 0 auto;
-  width: 30vw;
-  height: 50vh;
+.carousel{
+  width:100vw;
 }
 
-.hero-info-container{
-  display:flex;
-  align-content: right;
+.slide{
+  display: flex;
   flex-wrap: wrap;
-  
-  
+  width:100%;
 }
-h3, p{
-  color:black;
+
+.carousel-img{
+  height: 45vh;
+  width:50%;
 }
 
 
