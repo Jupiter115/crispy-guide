@@ -45,9 +45,12 @@ export default function Products() {
         <>
           <ProductHero data={data} />
           <div className="card-container">
-            {data.map((product) => (
-              <ProductCard key={product._id} item={product} />
-            ))}
+            {data
+              .slice(0)
+              .reverse()
+              .map((product) => (
+                <ProductCard key={product._id} item={product} />
+              ))}
           </div>
         </>
       )}
