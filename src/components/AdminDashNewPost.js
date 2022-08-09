@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import { Button, Checkbox } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import AdminDashNewPostGet from "./AdminDashNewPostGet";
 
 import axios from "axios";
 
@@ -42,7 +43,7 @@ export default function AdminDashNewPost() {
       <Button onClick={() => navigate(-1)} className="adminPost_cancel">
         <KeyboardBackspaceIcon /> Cancel
       </Button>
-
+      <AdminDashNewPostGet setProduct={setProduct} />
       <form action="submit" onSubmit={handleSubmit}>
         <label className="font-body" htmlFor="title">
           Product Title:
@@ -54,6 +55,7 @@ export default function AdminDashNewPost() {
           id="title"
           rows="2"
           className="width-100 adminPost_input"
+          value={product.title}
         />
         <br />
         <label className="font-body" htmlFor="orig">
@@ -66,6 +68,7 @@ export default function AdminDashNewPost() {
           id="orig"
           step=".01"
           className="adminPost_input"
+          // value={product.orig}
         />
         <br />
         <label className="font-body" htmlFor="price">
@@ -78,6 +81,7 @@ export default function AdminDashNewPost() {
           id="price"
           step=".01"
           className="adminPost_input"
+          // value={product.price}
         />
         <br />
         <label className="font-body" htmlFor="description">
@@ -90,6 +94,7 @@ export default function AdminDashNewPost() {
           type="text"
           id="description"
           rows="10"
+          value={product.description}
         />
         <br />
         <label className="font-body" htmlFor="image">
@@ -102,6 +107,7 @@ export default function AdminDashNewPost() {
           id="image"
           rows="2"
           className="width-100 adminPost_input"
+          value={product.image}
         />
         <br />
         <label className="font-body" htmlFor="link">
@@ -114,6 +120,7 @@ export default function AdminDashNewPost() {
           id="link"
           rows="2"
           className="width-100 adminPost_input"
+          value={product.link}
         />
         <br />
         <label className="font-body" htmlFor="category">

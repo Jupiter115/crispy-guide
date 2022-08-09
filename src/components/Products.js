@@ -3,11 +3,12 @@ import ProductCard from "./ProductCard";
 import { Link } from "react-router-dom";
 import throbber from "../assets/180-ring-with-bg.svg";
 import Search from "./Search";
+import { Button } from "@mui/material";
+
 import ProductHero from "./ProductHero";
-import {Button}from "react-bootstrap"
-import HeroData from "./HeroData";
 
 const axios = require("axios");
+
 
 export default function Products() {
   const [data, setData] = useState([]);
@@ -22,7 +23,7 @@ export default function Products() {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
-  
+
   useEffect(() => {
     axios
       .get(`https://mysterious-temple-52384.herokuapp.com/`)
@@ -42,15 +43,16 @@ export default function Products() {
         <img src={throbber} alt="trobber" />
       ) : (
         <>
-          <ProductHero data={data} />
+          <HeroData data={data} />
           <div className="card-container">
-            {data.map((product) => (
-              <ProductCard key={product._id} item={product} />
-            ))}
+            {data
+              .slice(0)
+              .reverse()
+              .map((product) => (
+                <ProductCard key={product._id} item={product} />
+              ))}
           </div>
-         
         </>
-    
       )}
       <center>
         <Button className="product_adminButton">

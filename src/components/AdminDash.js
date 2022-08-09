@@ -36,19 +36,22 @@ export default function AdminDash() {
   }
 
   const rows = [];
-  data.forEach((item) => {
-    rows.push(
-      createData(
-        item.title,
-        item.description,
-        "$" + item["orig"],
-        <Link to={`/admin/edit/${item._id}`}>
-          <EditIcon className="adminDash_edit" />
-        </Link>,
-        item._id
-      )
-    );
-  });
+  data
+    .slice(0)
+    .reverse()
+    .forEach((item) => {
+      rows.push(
+        createData(
+          item.title,
+          item.description,
+          "$" + item["price"],
+          <Link to={`/admin/edit/${item._id}`}>
+            <EditIcon className="adminDash_edit" />
+          </Link>,
+          item._id
+        )
+      );
+    });
 
   //Loading Sreen
   if (loading) {
