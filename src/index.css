@@ -12,6 +12,7 @@
 }
 body {
   background: linear-gradient(332deg, var(--clr-primary) 100%, var(--clr-secondary) 0%);
+  height: 100%;
 }
 /**************************************************************************
 HERO
@@ -102,7 +103,6 @@ a lot of media queries */
 
 .card-img{
   height:auto;
-  max-height: 100px;
   max-width: 100%;
   width: auto;
   margin: 1rem auto;
@@ -110,8 +110,8 @@ a lot of media queries */
 
 @media (min-width: 400px) {
   .card-img {
-    min-height: 150px;
-    height: auto;
+    height: 125px;
+    min-height: 125px;
     
   }
   .image-container{
@@ -119,8 +119,6 @@ a lot of media queries */
     margin: 16px 0;
   }
 }
-
-
 
 .product-title.card-title.h5{
   font-family: var(--font-title);
@@ -150,7 +148,7 @@ p.sale-price.card-text{
 }
 
 button.productCard_button{
-  margin: 2rem auto; 
+  margin-top: 2rem; 
   font-family: var(--font-body);
   font-weight: 600;
   background-color: var(--clr-accent3);
@@ -176,6 +174,34 @@ a.product_adminLink{
   text-decoration: none;
   color: black;
 }
+
+/**************************************************************************
+PRODUCT DESCRIPTION PAGE
+**************************************************************************/
+.description {
+
+}
+
+.description-image {
+  height:auto;
+  max-height: 500px;
+  max-width: 500px;
+  width: 95%;
+  margin: 1rem auto;
+}
+
+.product-description {
+  font-family: var(--font-body);
+  text-align: center;
+  font-weight:600;
+  margin: 0;
+
+}
+a.product-link {
+  color: var(--clr-primary);
+  text-decoration: none;
+}
+
 
 /**************************************************************************
 FOOTER

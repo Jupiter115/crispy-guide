@@ -85,9 +85,10 @@ NEW & EDIT POST
   max-width: 500px;
   min-width: 250px;
   padding: clamp(.5rem, 2vw, 2rem);
-  border: 2px solid rgba(128, 128, 128, 0.66);
+  border: 1px solid rgba(128, 128, 128, 0.66);
   border-radius: 10px;
   margin: 0 auto;
+
 }
 
 button.adminPost_cancel{

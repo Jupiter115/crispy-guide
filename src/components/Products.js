@@ -9,6 +9,7 @@ import ProductHero from "./ProductHero";
 
 const axios = require("axios");
 
+
 export default function Products() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);

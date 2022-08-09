@@ -87,12 +87,6 @@ Stephen Wong
 
 ![Request Response Diagram](./assets/planning/req-res-cycle-diagram.png)
 
-## WIREFRAME
-
-![Landing Page](./assets/planning/landing-page.jpg)
-![Product Page](./assets/planning/product-page.jpg)
-![Mobile Page](./assets/planning/mobile-landing-page.jpg)
-![Admin Page](./assets/planning/admin-page.jpg)
 
 ## TECHNOLOGIES USED
 
@@ -105,3 +99,19 @@ MongoDB
 Mongoose
 Express
 React
+
+## PLANNING
+
+
+### WIREFRAME
+
+![Landing Page](./assets/planning/landing-page.jpg)
+![Product Page](./assets/planning/product-page.jpg)
+![Mobile Page](./assets/planning/mobile-landing-page.jpg)
+![Admin Page](./assets/planning/admin-page.jpg)
+
+### PROJECT TRACSKING
+
+Project tracking was conducted on Clickup app. 
+![clickup](https://user-images.githubusercontent.com/20288105/183698127-82bbd3ac-db45-43c6-b028-6c60781a601f.jpg)
+
