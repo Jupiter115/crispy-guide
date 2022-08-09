@@ -102,7 +102,6 @@ a lot of media queries */
 
 .card-img{
   height:auto;
-  max-height: 100px;
   max-width: 100%;
   width: auto;
   margin: 1rem auto;
@@ -110,8 +109,8 @@ a lot of media queries */
 
 @media (min-width: 400px) {
   .card-img {
-    min-height: 150px;
-    height: auto;
+    height: 125px;
+    min-height: 125px;
     
   }
   .image-container{
