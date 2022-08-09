@@ -1,6 +1,3 @@
-
-
-
 import React, { useState } from "react"
 import  Carousel  from "react-bootstrap/Carousel";
 import 'bootstrap/dist/css/bootstrap.css';
@@ -12,11 +9,13 @@ export default function ProductHero(props) {
   const handleSelect = (selectedIndex , e) => {
     setIndex(selectedIndex)
   }
+  
+
+  
   const filteredArray = props.data.filter((product) => {
   return product.hero === true;
   });
-  
-  
+
   return (
     <Carousel className="carousel" activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item className = "car_item">
@@ -52,7 +51,7 @@ export default function ProductHero(props) {
         <Carousel.Caption>
           <h3>{filteredArray[2].title}</h3>
           <p>
-          {filteredArray[2].description}
+          {filteredArray && filteredArray[2].description}
           </p>
         </Carousel.Caption>
       </Carousel.Item>
