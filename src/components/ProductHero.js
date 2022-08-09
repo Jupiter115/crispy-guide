@@ -14,7 +14,29 @@ export default function ProductHero(props) {
 
   return (
     <Carousel className="carousel" activeIndex={index} onSelect={handleSelect}>
+      {filteredArray.map((feature) => {
+        return (
+          <Carousel.Item className="car_item">
+            <div>
+              <div className="carousel-img">
+                <img src={feature.image} alt={feature.title + "pic"} />
+              </div>
+              <div>
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
+              </div>
+            </div>
+          </Carousel.Item>
+        );
+      })}
+    </Carousel>
+
+    /*     <Carousel className="carousel" activeIndex={index} onSelect={handleSelect}>
+
+
       <Carousel.Item className="car_item">
+
+
         <div className="carousel-img">
           <img src={filteredArray[0].image} alt="First slide" />
         </div>
@@ -49,6 +71,6 @@ export default function ProductHero(props) {
           <p>{filteredArray && filteredArray[2].description}</p>
         </Carousel.Caption>
       </Carousel.Item>
-    </Carousel>
+    </Carousel> */
   );
 }
