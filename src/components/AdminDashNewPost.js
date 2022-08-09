@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import { Button, Checkbox } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -37,6 +37,8 @@ export default function AdminDashNewPost() {
     setProduct({ ...product, hero: event.target.checked });
   };
 
+  useEffect(() => console.log(product), []);
+
   return (
     <div className="adminPost_container">
       <h2 className="font-body">Add New Deal</h2>
@@ -68,7 +70,7 @@ export default function AdminDashNewPost() {
           id="orig"
           step=".01"
           className="adminPost_input"
-          value={product.orig}
+          // value={product.orig}
         />
         <br />
         <label className="font-body" htmlFor="price">
@@ -81,7 +83,7 @@ export default function AdminDashNewPost() {
           id="price"
           step=".01"
           className="adminPost_input"
-          value={product.price}
+          // value={product.price}
         />
         <br />
         <label className="font-body" htmlFor="description">

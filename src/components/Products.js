@@ -9,7 +9,6 @@ import ProductHero from "./ProductHero";
 
 const axios = require("axios");
 
-
 export default function Products() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -45,9 +44,12 @@ export default function Products() {
         <>
           <ProductHero data={data} />
           <div className="card-container">
-            {data.map((product) => (
-              <ProductCard key={product._id} item={product} />
-            ))}
+            {data
+              .slice(0)
+              .reverse()
+              .map((product) => (
+                <ProductCard key={product._id} item={product} />
+              ))}
           </div>
         </>
       )}
