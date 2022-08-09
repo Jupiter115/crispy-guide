@@ -10,7 +10,7 @@ export default function ProductCard(props) {
     <Container>
       <Card className="product-container">
         <Card.Title className="product-title">
-          {title.length > 40 ? title.slice(0, 40) + "..." : title}
+          {title.length > 45 ? title.slice(0, 45) + "..." : title}
         </Card.Title>
         <Card.Body className="image-container">
           <Link to={`/product/${_id}`}>

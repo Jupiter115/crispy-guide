@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 import throbber from "../assets/180-ring-with-bg.svg";
 import Search from "./Search";
 import { Button } from "@mui/material";
+
 import ProductHero from "./ProductHero";
 
 const axios = require("axios");
+
 
 export default function Products() {
   const [data, setData] = useState([]);
