@@ -12,6 +12,7 @@
 }
 body {
   background: linear-gradient(332deg, var(--clr-primary) 100%, var(--clr-secondary) 0%);
+  height: 100%;
 }
 /**************************************************************************
 HERO
@@ -119,8 +120,6 @@ a lot of media queries */
   }
 }
 
-
-
 .product-title.card-title.h5{
   font-family: var(--font-title);
   text-align: center;
@@ -149,7 +148,7 @@ p.sale-price.card-text{
 }
 
 button.productCard_button{
-  margin: 2rem auto; 
+  margin-top: 2rem; 
   font-family: var(--font-body);
   font-weight: 600;
   background-color: var(--clr-accent3);
