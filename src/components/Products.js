@@ -15,35 +15,30 @@ export default function Products() {
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
 
-  const handleChange = (e) => {
-    e.preventDefault();
-    setSearch(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
   useEffect(() => {
-    axios
-      .get(`https://mysterious-temple-52384.herokuapp.com/`)
-      .then((res) => setData(res.data))
-      .then(setTimeout(() => setLoading(false), 200));
+    getFetch()
   }, [search]);
+
+  const getFetch = function () {
+    axios
+    .get(`https://mysterious-temple-52384.herokuapp.com/`)
+    .then((res) => setData(res.data))
+    .then(setTimeout(() => setLoading(false), 200));
+  }
 
   return (
     <div>
       <Search
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-        search={search}
+        handleSearch={setData}
+        searchData={data}
+        getFetch={getFetch}
       />
 
       {loading ? (
         <img src={throbber} alt="trobber" />
       ) : (
         <>
-          <ProductHero data={data} />
+          {/* <ProductHero data={data} /> */}
           <div className="card-container">
             {data
               .slice(0)
