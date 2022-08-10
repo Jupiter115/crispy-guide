@@ -1,62 +1,92 @@
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
 
-
-
-import React, { useState } from "react"
-import  Carousel  from "react-bootstrap/Carousel";
-import 'bootstrap/dist/css/bootstrap.css';
-
+import { Container } from "@mui/system";
 
 export default function ProductHero(props) {
-
-  const [index,setIndex] = useState(0)
-  const handleSelect = (selectedIndex , e) => {
-    setIndex(selectedIndex)
-  }
   const filteredArray = props.data.filter((product) => {
-  return product.hero === true;
+    return product.hero === true;
   });
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 3,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 9000,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 825,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
 
   return (
-    <Carousel className="carousel" activeIndex={index} onSelect={handleSelect}>
-      <Carousel.Item className = "car_item">
-        <img 
-          className = "carousel-img"
-          src= "https://m.media-amazon.com/images/I/51-ZYnAU-SL._AC_SX466_.jpg"
-          alt="First slide"
-        />
-        {/* <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption> */}
-      </Carousel.Item>
-      <Carousel.Item >
-        <img
-         className="carousel-img"
-          src="https://m.media-amazon.com/images/I/51-ZYnAU-SL._AC_SX466_.jpg"
-          alt="Second slide"
-        />
+    <div className="carousel-container">
+      <div>
+        <h3 className="carousel_h3">Deal of the Day</h3>
+      </div>
+      <Slider {...settings}>
+        {filteredArray.map((feature) => {
+          return (
+            <Container>
 
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="carousel-img"
-          src="https://m.media-amazon.com/images/I/51-ZYnAU-SL._AC_SX466_.jpg"
-          alt="Third slide"
-        />
+              <Card.Title className="carousel_h5">
+                {feature.title.length > 45
+                  ? feature.title.slice(0, 45) + "..."
+                  : feature.title}
+              </Card.Title>
 
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
-  
-
+              <Card.Body className="image-container carousel_img-container">
+                <Card.Img src={feature.image} alt="product-pic" />
+              </Card.Body>
+              <Card.Body className="price-container">
+                <Card.Text className="orig-price">
+                  Original Price{" "}
+                  <span className="strikethrough"> ${feature.orig}</span>
+                </Card.Text>
+                <Card.Text className="sale-price">
+                  On Sale For <br />$ {feature.price}
+                </Card.Text>
+                <Link
+                  className="productCard_details"
+                  to={`/product/${feature._id}`}
+                >
+                  <Button className="productCard_button" variant="contained">
+                    See Details
+                  </Button>
+                </Link>
+              </Card.Body>
+            </Container>
+          );
+        })}
+      </Slider>
+    </div>
   );
 }
