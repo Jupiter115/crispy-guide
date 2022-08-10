@@ -38,7 +38,7 @@ Stephen Wong
 
 ## STRETCH GOALS
 
-- Stretch Bar feature
+- Search Bar feature
 - Likes feature
 - Admin user authentication feature
 - Sign up for email notifications
@@ -102,7 +102,6 @@ React
 
 ## PLANNING
 
-
 ### WIREFRAME
 
 ![Landing Page](./assets/planning/landing-page.jpg)
@@ -110,8 +109,19 @@ React
 ![Mobile Page](./assets/planning/mobile-landing-page.jpg)
 ![Admin Page](./assets/planning/admin-page.jpg)
 
-### PROJECT TRACSKING
+### PROJECT TRACKING
 
 Project tracking was conducted on Clickup app. 
 ![clickup](https://user-images.githubusercontent.com/20288105/183698127-82bbd3ac-db45-43c6-b028-6c60781a601f.jpg)
 
+### PROJECT OBSTACLES
+- Choosing the right library for carousol. 
+- CSS generally difficult.
+- Media queries are a challenge.
+- Conflicts with design direction. 
+
+### FUTURE PLANNED IMPLEMENTATIONS
+- Update feel and look
+- Fix scrapper
+- Add Nav bar with categories
+- User sign in for favorites and email alerts.
