@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ProductCard from "./ProductCard";
 import { Link } from "react-router-dom";
 import throbber from "../assets/180-ring-with-bg.svg";
@@ -12,11 +12,7 @@ const axios = require("axios");
 export default function Products() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [search, setSearch] = useState("");
-
-  useEffect(() => {
-    getFetch();
-  }, [search]);
+  const [showHero, setShowHero] = useState(true);
 
   const getFetch = function () {
     axios
@@ -27,12 +23,20 @@ export default function Products() {
 
   return (
     <div>
-      <Search handleSearch={setData} searchData={data} getFetch={getFetch} />
+      <Search
+        handleSearch={setData}
+        searchData={data}
+        getFetch={getFetch}
+        setShowHero={setShowHero}
+      />
 
       {loading ? (
-        <img src={throbber} alt="trobber" />
+        <center>
+          <img src={throbber} alt="trobber" />
+        </center>
       ) : (
         <>
+          {showHero && <ProductHero data={data} />}
           <ProductHero data={data} />
           <div className="card-container">
             {data
