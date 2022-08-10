@@ -28,6 +28,7 @@ export default function AdminDash() {
       .get("https://mysterious-temple-52384.herokuapp.com/")
       .then((res) => setData(res.data))
       .then(() => setTimeout(() => setLoading(false), 500));
+
   }, []);
 
   //Table Settings
