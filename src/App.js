@@ -12,7 +12,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-     
       <Routes>
         <Route path="/" element={<Products />} />
         <Route path="/admin" element={<Admin />} />

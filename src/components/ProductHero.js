@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
-import { FeaturedPlayList } from "@mui/icons-material";
 import { Container } from "@mui/system";
 
 export default function ProductHero(props) {
@@ -21,7 +20,7 @@ export default function ProductHero(props) {
     initialSlide: 0,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 9000,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
@@ -30,7 +29,7 @@ export default function ProductHero(props) {
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 825,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -50,28 +49,33 @@ export default function ProductHero(props) {
   return (
     <div className="carousel-container">
       <div>
-        <h3>Deal of the Day</h3>
+        <h3 className="carousel_h3">Deal of the Day</h3>
       </div>
       <Slider {...settings}>
         {filteredArray.map((feature) => {
           return (
             <Container>
-              <Card className="product-container">
-                <Card.Title>{feature.title.length > 45 ? feature.title.slice(0,45) + "..." : feature.title}</Card.Title>
-              </Card>
-              <Card.Body className="image-container">
+              <Card.Title className="carousel_h5">
+                {feature.title.length > 45
+                  ? feature.title.slice(0, 45) + "..."
+                  : feature.title}
+              </Card.Title>
+
+              <Card.Body className="image-container carousel_img-container">
                 <Card.Img src={feature.image} alt="product-pic" />
               </Card.Body>
               <Card.Body className="price-container">
                 <Card.Text className="orig-price">
-                  Original Price <span className="strikethrough"> ${feature.orig}</span>
+                  Original Price{" "}
+                  <span className="strikethrough"> ${feature.orig}</span>
                 </Card.Text>
-
                 <Card.Text className="sale-price">
                   On Sale For <br />$ {feature.price}
                 </Card.Text>
-
-                <Link className="productCard_details" to={`/product/${feature._id}`}>
+                <Link
+                  className="productCard_details"
+                  to={`/product/${feature._id}`}
+                >
                   <Button className="productCard_button" variant="contained">
                     See Details
                   </Button>
