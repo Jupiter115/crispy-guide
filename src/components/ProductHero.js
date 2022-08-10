@@ -57,21 +57,29 @@ export default function ProductHero(props) {
           return (
             <Container>
               <Card className="product-container">
-                <Card.Title>{feature.title.length > 45 ? feature.title.slice(0,45) + "..." : feature.title}</Card.Title>
+                <Card.Title className="carousel-title">
+                  {feature.title.length > 45
+                    ? feature.title.slice(0, 45) + "..."
+                    : feature.title}
+                </Card.Title>
               </Card>
               <Card.Body className="image-container">
                 <Card.Img src={feature.image} alt="product-pic" />
               </Card.Body>
               <Card.Body className="price-container">
                 <Card.Text className="orig-price">
-                  Original Price <span className="strikethrough"> ${feature.orig}</span>
+                  Original Price{" "}
+                  <span className="strikethrough"> ${feature.orig}</span>
                 </Card.Text>
 
                 <Card.Text className="sale-price">
                   On Sale For <br />$ {feature.price}
                 </Card.Text>
 
-                <Link className="productCard_details" to={`/product/${feature._id}`}>
+                <Link
+                  className="productCard_details"
+                  to={`/product/${feature._id}`}
+                >
                   <Button className="productCard_button" variant="contained">
                     See Details
                   </Button>
