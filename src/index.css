@@ -257,25 +257,43 @@ a.product_adminLink{
 /**************************************************************************
 PRODUCT DESCRIPTION PAGE
 **************************************************************************/
+.description_container {
+  max-width: 800px;
+  width: 95vw;
+  background-color: white;
+  border-radius: 15px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.description_image {
+  height:auto;
+  max-width: 250px;
+  width: 95%;
+}
+
+.description_title {
+  font-family: var(--font-title);
+  font-weight:600;
+  font-size: clamp(1rem, 6vw, 200%);
+  text-align: left;
+}
+.description_body {
+    font-family: var(--font-body);
+    text-align: left;
+}
+
 .description_button {
   margin: 1rem auto;
-}
-
-.description-image {
-  height:auto;
-  max-height: 500px;
-  max-width: 500px;
-  width: 95%;
-  margin: 1rem auto;
-}
-
-.product-description {
-  font-family: var(--font-body);
-  text-align: center;
-  font-weight:600;
-  margin: 1rem;
 
 }
+
+
+
+
 a.product-link {
   color: var(--clr-primary);
   text-decoration: none;
@@ -314,7 +332,7 @@ SEARCH
   border-radius: 50px;
   outline: none;
   height: 4rem;
-  padding: 1rem 3rem;
+  padding: 1rem 5rem;
   color: var(--clr-text);
   font-family: var(--font-body);
   font-size: 1.25rem;

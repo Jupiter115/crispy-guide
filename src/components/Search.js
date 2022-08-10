@@ -10,25 +10,21 @@ export default function Search({
   setShowHero,
 }) {
   const [searchInput, setSearchInput] = useState("");
+  const handleClickClear = function (e) {
+    e.preventDefault();
+    setShowHero(true);
+    setSearchInput("");
+    getFetch();
+  };
 
   const handleClick = function (e) {
     e.preventDefault();
-    // if (e.target.value === "") {
-    //   return handleClickClear();
-    // }
-    // setShowHero(false);
+    setShowHero(false);
     const searchResult = searchData.filter((product) =>
       product.title.toLowerCase().includes(searchInput.toLowerCase())
     );
     handleSearch(searchResult);
     setSearchInput("");
-  };
-
-  const handleClickClear = function (e) {
-    e.preventDefault();
-    // setShowHero(true);
-    setSearchInput("");
-    getFetch();
   };
 
   return (

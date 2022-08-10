@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import { Link } from "react-router-dom";
 import throbber from "../assets/180-ring-with-bg.svg";
@@ -21,6 +21,10 @@ export default function Products() {
       .then(setTimeout(() => setLoading(false), 200));
   };
 
+  useEffect(() => {
+    getFetch();
+  }, []);
+
   return (
     <div>
       <Search
@@ -37,7 +41,6 @@ export default function Products() {
       ) : (
         <>
           {showHero && <ProductHero data={data} />}
-          <ProductHero data={data} />
           <div className="card-container">
             {data
               .slice(0)
