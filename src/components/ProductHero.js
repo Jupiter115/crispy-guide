@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
-import { FeaturedPlayList } from "@mui/icons-material";
+
 import { Container } from "@mui/system";
 
 export default function ProductHero(props) {
