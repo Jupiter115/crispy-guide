@@ -5,7 +5,6 @@ import "slick-carousel/slick/slick-theme.css";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
-
 import { Container } from "@mui/system";
 
 export default function ProductHero(props) {
@@ -55,8 +54,7 @@ export default function ProductHero(props) {
       <Slider {...settings}>
         {filteredArray.map((feature) => {
           return (
-            <Container>
-
+            <Container key={feature._id}>
               <Card.Title className="carousel_h5">
                 {feature.title.length > 45
                   ? feature.title.slice(0, 45) + "..."

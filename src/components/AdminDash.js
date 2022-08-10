@@ -27,7 +27,7 @@ export default function AdminDash() {
     axios
       .get("https://mysterious-temple-52384.herokuapp.com/")
       .then((res) => setData(res.data))
-      .then(() => setLoading(false));
+      .then(() => setTimeout(() => setLoading(false), 3000));
   }, []);
 
   //Table Settings
@@ -55,7 +55,11 @@ export default function AdminDash() {
 
   //Loading Sreen
   if (loading) {
-    return <img src={throbber} alt="Throbber" />;
+    return (
+      <center>
+        <img src={throbber} alt="Throbber" />
+      </center>
+    );
   }
 
   //Main Dash

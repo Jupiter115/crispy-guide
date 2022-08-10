@@ -11,7 +11,7 @@ export default function Admin() {
   const navigate = useNavigate();
 
   //Remove value from useState before production
-  const [input, setInput] = useState("bestjups");
+  const [input, setInput] = useState("");
   const [warning, setWarning] = useState(false);
 
   function handleChange(e) {

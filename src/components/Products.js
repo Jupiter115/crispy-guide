@@ -12,11 +12,7 @@ const axios = require("axios");
 export default function Products() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [search, setSearch] = useState("");
-
-  useEffect(() => {
-    getFetch();
-  }, [search]);
+  const [showHero, setShowHero] = useState(true);
 
   const getFetch = function () {
     axios
@@ -25,15 +21,26 @@ export default function Products() {
       .then(setTimeout(() => setLoading(false), 200));
   };
 
+  useEffect(() => {
+    getFetch();
+  }, []);
+
   return (
     <div>
-      <Search handleSearch={setData} searchData={data} getFetch={getFetch} />
+      <Search
+        handleSearch={setData}
+        searchData={data}
+        getFetch={getFetch}
+        setShowHero={setShowHero}
+      />
 
       {loading ? (
-        <img src={throbber} alt="trobber" />
+        <center>
+          <img src={throbber} alt="trobber" />
+        </center>
       ) : (
         <>
-          <ProductHero data={data} />
+          {showHero && <ProductHero data={data} />}
           <div className="card-container">
             {data
               .slice(0)
