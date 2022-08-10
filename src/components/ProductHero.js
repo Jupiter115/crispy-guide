@@ -57,7 +57,7 @@ export default function ProductHero(props) {
           return (
             <Container>
               <Card className="product-container">
-                <Card.Title>{feature.title}</Card.Title>
+                <Card.Title>{feature.title.length > 45 ? feature.title.slice(0,45) + "..." : feature.title}</Card.Title>
               </Card>
               <Card.Body className="image-container">
                 <Card.Img src={feature.image} alt="product-pic" />
