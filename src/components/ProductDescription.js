@@ -32,15 +32,15 @@ useEffect(() => {
                   Description: {product.description}
                 </Card.Text>
                 <Card.Text className='orig-price'>
-                  Original Price: <span className='strikethrough'>{product.orig}</span>
+                  Original Price: <span className='strikethrough'>${product.orig}</span>
                 </Card.Text>
                 <Card.Text className='sale-price'>
-                  Sale Price: {product.price}
+                  Sale Price:${product.price}
 
                 </Card.Text>
             </Card.Body>
 
-            <Button className='productCard_button'>
+            <Button className='productCard_button description_button'>
               <a href={product.link} className='product-link'> See Jupiter Deal </a>
             </Button>
 
