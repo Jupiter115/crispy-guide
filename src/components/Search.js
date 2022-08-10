@@ -18,7 +18,7 @@ export default function Search({handleChange,handleSubmit,search}) {
     <input className="search_input"
       id="Search"
       type="text"
-      placeholder="search Here"
+      placeholder="Find deals"
       onChange={handleChange}
       onSubmit={handleSubmit}
       value={search}
