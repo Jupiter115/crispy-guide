@@ -38,7 +38,7 @@ export default function Admin() {
       )}
       <form onSubmit={handleSubmit}>
         <input
-          type="text"
+          type="password"
           onChange={handleChange}
           value={input}
           className="admin_input"
