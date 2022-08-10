@@ -43,7 +43,7 @@ export default function Products() {
         <img src={throbber} alt="trobber" />
       ) : (
         <>
-          <HeroData data={data} />
+          <ProductHero data={data} />
           <div className="card-container">
             {data
               .slice(0)
