@@ -40,9 +40,9 @@ useEffect(() => {
                 </Card.Text>
             </Card.Body>
 
-            <Button className='productCard_button description_button'>
+            <MaButton className='productCard_button description_button'>
               <a href={product.link} className='product-link'> See Jupiter Deal </a>
-            </Button>
+            </MaButton>
 
         </Card>
         <center>
