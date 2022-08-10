@@ -224,32 +224,35 @@ SEARCH
   display: flex;
   justify-content: left;
   padding: 20px;
-  margin-left: 4vw;
+
 }
 
 .search_input{
-  width: 90%;
-  max-width: 600px;
- border-radius: 60px;
- height: 6vh;
- padding-left: 20px;
- color: var(--clr-text);
- font-family: var(--font-title);
- background: rgb(242,236,221);
- background: linear-gradient(90deg, rgba(242,236,221,1) 7%, rgba(139,138,118,1) 62%, rgba(153,86,44,1) 100%);
+  width: 80%;
+  max-width: 1000px;
+  border-radius: 60px;
+  outline: none;
+  height: 6vh;
+  padding-left: 20px;
+  color: var(--clr-text);
+  font-family: var(--font-title);
+  background: rgb(242,236,221);
+  background: linear-gradient(90deg, rgba(242,236,221,1) 7%, rgba(139,138,118,1) 62%, rgba(153,86,44,1) 100%);
 }
 .search_button{
-margin-left: 10px;
-margin-top: 1px;
-border-radius: 100%;
+margin-left: -50px;
+border:none;
+
 height: 6vh;
 width: 6vh;
 font-size: 23px;
 color: var(--clr-text);
-background: rgb(242,236,221);
-background: linear-gradient(90deg, rgba(242,236,221,1) 0%, rgba(139,138,118,1) 2%, rgba(153,86,44,1) 100%);
+background-color: transparent;
 }
 
 .search_input::placeholder{
   color: var(--font-title);
+}
+.search_button:hover{
+  color: var(--clr-secondary)
 }
