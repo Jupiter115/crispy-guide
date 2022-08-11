@@ -110,6 +110,9 @@ MongoDB
 Mongoose
 Express
 React
+Puppeteer
+Cheerio
+Browserless
 
 ## PLANNING
 
