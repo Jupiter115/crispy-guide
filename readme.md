@@ -70,6 +70,7 @@ Stephen Wong
 ### Final Site
 
 Pics removed for demo
+
 ![landingpage](https://user-images.githubusercontent.com/20288105/184196613-663c4151-e79c-4bd3-8046-7e68e40741f9.png | width=200)
 ![Admin](https://user-images.githubusercontent.com/20288105/184196603-212278da-8216-496e-b119-24200e187efc.png | width=200)
 ![description page](https://user-images.githubusercontent.com/20288105/184196609-da8f319e-80f9-4be3-b7a9-a2c5bd83d7f3.png | width=200)
