@@ -13,7 +13,7 @@ export default function AdminDashNewPostGet(props) {
     e.preventDefault();
     setLoading(true);
     axios
-      .get(`https://jupiter-scraper.herokuapp.com/new/${input}`)
+      .post(`https://jupiter-scraper.herokuapp.com/scrape/`, { url: input })
       .then((res) => {
         console.log(res.data);
         console.log(input);
