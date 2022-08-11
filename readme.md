@@ -66,6 +66,15 @@ Stephen Wong
 
 ## COMPONENTS
 
+
+### Final Site
+
+![postedit](https://user-images.githubusercontent.com/20288105/184196619-4ff8922c-5b8d-4a67-97a2-0f61ec539384.png)
+![landingpage](https://user-images.githubusercontent.com/20288105/184196613-663c4151-e79c-4bd3-8046-7e68e40741f9.png | width=100)
+![Admin](https://user-images.githubusercontent.com/20288105/184196603-212278da-8216-496e-b119-24200e187efc.png | width=100)
+![description page](https://user-images.githubusercontent.com/20288105/184196609-da8f319e-80f9-4be3-b7a9-a2c5bd83d7f3.png | width=100)
+
+
 ### Admin Page
 
 - Admin
@@ -104,10 +113,10 @@ React
 
 ### WIREFRAME
 
-![Landing Page](./assets/planning/landing-page.jpg)
-![Product Page](./assets/planning/product-page.jpg)
-![Mobile Page](./assets/planning/mobile-landing-page.jpg)
-![Admin Page](./assets/planning/admin-page.jpg)
+![Landing Page](./assets/planning/landing-page.jpg | width=100)
+![Product Page](./assets/planning/product-page.jpg | width=100)
+![Mobile Page](./assets/planning/mobile-landing-page.jpg | width=100)
+![Admin Page](./assets/planning/admin-page.jpg | width=100)
 
 ### PROJECT TRACKING
 
