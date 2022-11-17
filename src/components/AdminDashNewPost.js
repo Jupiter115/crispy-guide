@@ -27,7 +27,7 @@ export default function AdminDashNewPost() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("https://mysterious-temple-52384.herokuapp.com/products", product)
+      .post("https://jdbackend.wskcreative.com/products", product)
       .then(() => {
         navigate("/admin/dash");
       });
@@ -43,7 +43,7 @@ export default function AdminDashNewPost() {
       <Button onClick={() => navigate(-1)} className="adminPost_cancel">
         <KeyboardBackspaceIcon /> Cancel
       </Button>
-      <AdminDashNewPostGet setProduct={setProduct} />
+      {/* <AdminDashNewPostGet setProduct={setProduct} /> */}
       <form action="submit" onSubmit={handleSubmit}>
         <label className="font-body" htmlFor="title">
           Product Title:

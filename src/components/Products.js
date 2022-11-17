@@ -16,7 +16,7 @@ export default function Products() {
 
   const getFetch = function () {
     axios
-      .get(`https://mysterious-temple-52384.herokuapp.com/`)
+      .get(`https://jdbackend.wskcreative.com/`)
       .then((res) => setData(res.data))
       .then(setTimeout(() => setLoading(false), 200));
   };

@@ -10,7 +10,7 @@ export default function ProductDescription() {
 
   useEffect(() => {
     axios
-      .get(`https://mysterious-temple-52384.herokuapp.com/products/${id}`)
+      .get(`https://jdbackend.wskcreative.com/products/${id}`)
       .then((res) => setProduct(res.data));
   }, [id]);
 

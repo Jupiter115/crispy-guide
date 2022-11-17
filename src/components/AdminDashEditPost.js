@@ -19,7 +19,7 @@ export default function AdminDashEditPost() {
     event.preventDefault();
     axios
       .patch(
-        `https://mysterious-temple-52384.herokuapp.com/products/${id}`,
+        `https://jdbackend.wskcreative.com/products/${id}`,
         product
       )
       .then(() => {
